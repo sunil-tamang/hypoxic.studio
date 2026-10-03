@@ -165,7 +165,22 @@ layout: compress
      FULLSCREEN MENU
 ========================================= -->
 
+<!-- ==========================================
+     FULLSCREEN MENU
+========================================== -->
+
 <div class="studio-menu" id="studioMenu">
+
+    <!-- Background Image -->
+    <img
+        class="studio-menu-background"
+        src="{{ '/assets/css/images/menu-bg.png' | relative_url }}"
+        alt=""
+        aria-hidden="true">
+
+    <!-- Background Overlay -->
+    <div class="studio-menu-overlay"></div>
+
 
     <div class="studio-menu-inner">
 
@@ -176,8 +191,9 @@ layout: compress
 
         <div class="studio-menu-header">
 
-            <a href="{{ '/' | relative_url }}"
-               class="studio-menu-brand">
+            <a
+                href="{{ '/' | relative_url }}"
+                class="studio-menu-brand">
 
                 <img
                     src="{{ '/assets/css/images/clients/logo.png' | relative_url }}"
@@ -190,27 +206,21 @@ layout: compress
 
 
         <!-- ===================================
-             NAVIGATION
+             MENU NAVIGATION
         ==================================== -->
 
         <nav class="studio-navigation">
 
             <a href="{{ '/films/' | relative_url }}">
-
                 WORK
-
             </a>
 
             <a href="{{ '/about/' | relative_url }}">
-
                 ABOUT
-
             </a>
 
             <a href="{{ '/stills/' | relative_url }}">
-
                 STILLS
-
             </a>
 
         </nav>
@@ -218,36 +228,40 @@ layout: compress
 
 
         <!-- ===================================
-             FOOTER
+             MENU FOOTER
         ==================================== -->
 
         <div class="studio-menu-footer">
 
             <div class="studio-social-links">
 
-
-                <a href="https://instagram.com/" target="_blank">
+                <a
+                    href="https://instagram.com/"
+                    target="_blank"
+                    rel="noopener">
 
                     Instagram
 
                 </a>
 
-                <a href="https://youtube.com/" target="_blank">
+                <a
+                    href="https://youtube.com/"
+                    target="_blank"
+                    rel="noopener">
 
                     YouTube
 
                 </a>
 
-                 <a href="{{ '/contact/' | relative_url }}">
+                <a href="{{ '/contact/' | relative_url }}">
 
                     Get In Touch
 
                 </a>
 
-
             </div>
 
-           
+
             <div class="studio-footer-text">
 
                 Based in Nepal<br>

@@ -60,15 +60,15 @@ description : ""
 <div class="homepage-hero">
 
     <video
-    class="homepage-hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    poster="{{ '/assets/css/images/hero-poster.jpg' | relative_url }}"
-    controlsList="nodownload nofullscreen noremoteplayback"
-    oncontextmenu="return false">
+        class="homepage-hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="{{ '/assets/css/images/hero-poster.jpg' | relative_url }}"
+        controlsList="nodownload nofullscreen noremoteplayback"
+        oncontextmenu="return false">
 
         <source
             src="{{ site.baseurl }}{{ video_slide.src }}"
@@ -78,46 +78,78 @@ description : ""
 
     <div class="homepage-hero-overlay"></div>
 
+    <div class="homepage-hero-frame"></div>
+
+
+
+    <!-- MAIN CONTENT -->
+
     <div class="homepage-hero-content">
 
         <div class="homepage-hero-text">
 
+            <div class="hero-kicker">
+                EXPEDITION FILMMAKER
+                <span>—</span>
+                MOUNTAIN CINEMATOGRAPHER
+            </div>
+
+
             <h1 class="homepage-hero-title">
-
-                Stories<br>
-                from the<br>
-                Himalayas.
-
+                STORIES<br>
+                FROM THE<br>
+                HIMALAYAS.
             </h1>
 
-            <p class="homepage-hero-description">
 
-                Expedition documentaries from the
-                highest mountains on Earth.
+           
+            <!-- INFORMATION -->
 
-            </p>
+            <div class="hero-meta">
+
+                <div class="hero-meta-item">
+                    <span>DISCIPLINE</span>
+                    <strong>
+                        FILM · DOCUMENTARY · CINEMATOGRAPHY
+                    </strong>
+                </div>
+
+                <div class="hero-meta-item">
+                    <span>TERRAIN</span>
+                    <strong>
+                        HIMALAYA · HIGH ALTITUDE · ALPINE
+                    </strong>
+                </div>
+
+                <div class="hero-meta-item">
+                    <span>WORK</span>
+                    <strong>
+                        EXPEDITIONS · MOUNTAIN STORIES
+                    </strong>
+                </div>
+
+            </div>
 
         </div>
 
-        <a
-            href="#"
-            class="homepage-hero-scroll"
-            id="heroScroll">
 
-            <span>
 
-                Scroll
+    </div>
 
-            </span>
 
-            <span class="homepage-hero-scroll-arrow">
+    <!-- SIDE LABEL -->
 
-                ↓
+    <div class="hero-side-label">
+        FILM / MOUNTAINS / PEOPLE
+    </div>
 
-            </span>
 
-        </a>
+    <!-- SCROLL -->
 
+    <div class="hero-scroll" class="homepage-hero-scroll"
+id="heroScroll">
+        <span>SCROLL</span>
+        <span>↓</span>
     </div>
 
 </div>
