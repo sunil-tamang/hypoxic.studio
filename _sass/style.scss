@@ -79,6 +79,539 @@ transform:translate(-50%,-50%);
 
 
 
+/* ==========================================================
+   HYPOXIC.STUDIO — COMING SOON
+   Swiss Editorial × Cinematic × Expedition
+   ========================================================== */
+
+$hs-black: #101010;
+$hs-white: #f1f0eb;
+$hs-grey: #999994;
+$hs-line: rgba(241, 240, 235, 0.22);
+$hs-mono: "DM Mono", "Courier New", monospace;
+$hs-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+
+body.coming-soon-page {
+  margin: 0;
+  padding: 0;
+  background: $hs-black;
+  color: $hs-white;
+  overflow-x: hidden;
+}
+
+/* ----------------------------------------------------------
+   MAIN WRAPPER
+   ---------------------------------------------------------- */
+
+.hypoxic-landing {
+  width: 100%;
+  min-height: 100vh;
+  background: $hs-black;
+  color: $hs-white;
+  font-family: $hs-display;
+  -webkit-font-smoothing: antialiased;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  a:hover {
+    opacity: 0.65;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* --------------------------------------------------------
+     HEADER
+     -------------------------------------------------------- */
+
+  .hypoxic-header {
+    width: 100%;
+    min-height: 90px;
+    padding: 0 clamp(24px, 4vw, 80px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-bottom: 1px solid $hs-line;
+  }
+
+  .hypoxic-logo {
+    display: inline-flex;
+    align-items: flex-start;
+
+    font-family: $hs-display;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.1em;
+
+    span {
+      font-family: $hs-mono;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0;
+      margin-left: 5px;
+    }
+  }
+
+  .header-info {
+    font-family: $hs-mono;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: $hs-grey;
+    text-align: right;
+  }
+
+  /* --------------------------------------------------------
+     HERO
+     -------------------------------------------------------- */
+
+  .hypoxic-hero {
+    padding: 0 clamp(24px, 4vw, 80px);
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 26px 0;
+
+    font-family: $hs-mono;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: $hs-grey;
+  }
+
+  /* --------------------------------------------------------
+     MAIN TYPOGRAPHY
+     -------------------------------------------------------- */
+
+  .hero-title {
+    width: 100%;
+    margin: 35px 0 65px;
+    padding: 0;
+
+    font-family: $hs-display;
+    font-size: clamp(72px, 14vw, 260px);
+    font-weight: 700;
+    line-height: 0.83;
+    letter-spacing: -0.105em;
+    text-transform: uppercase;
+
+    span {
+      color: $hs-grey;
+    }
+  }
+
+  /* --------------------------------------------------------
+     EDITORIAL TWO-COLUMN LAYOUT
+     -------------------------------------------------------- */
+
+  .hero-content {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 40% minmax(0, 60%);
+    align-items: stretch;
+
+    border-top: 1px solid $hs-line;
+    border-bottom: 1px solid $hs-line;
+  }
+
+  /* --------------------------------------------------------
+     LEFT COLUMN
+     -------------------------------------------------------- */
+
+  .hero-left {
+    min-width: 0;
+    min-height: 620px;
+    padding: 35px 45px 35px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    border-right: 1px solid $hs-line;
+  }
+
+  .hero-label {
+    margin: 0;
+
+    font-family: $hs-mono;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    color: $hs-grey;
+  }
+
+  .hero-left h2 {
+    margin: auto 0;
+    padding: 65px 0;
+
+    font-family: $hs-display;
+    font-size: clamp(45px, 5.1vw, 100px);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.075em;
+    text-transform: uppercase;
+  }
+
+  .hero-description {
+    max-width: 320px;
+    margin: 0 0 40px;
+
+    font-family: $hs-display;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+    color: $hs-grey;
+  }
+
+  /* --------------------------------------------------------
+     COMING SOON STATUS
+     -------------------------------------------------------- */
+
+  .coming-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    padding-top: 20px;
+    border-top: 1px solid $hs-line;
+
+    font-family: $hs-mono;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+
+    background: $hs-white;
+    border-radius: 50%;
+
+    animation: hs-pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes hs-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.25;
+    }
+  }
+
+  /* --------------------------------------------------------
+     RIGHT COLUMN — EXPEDITION PHOTOGRAPHY
+     -------------------------------------------------------- */
+
+  .hero-right {
+    min-width: 0;
+    padding: 25px 0 25px 25px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-frame {
+    position: relative;
+    flex: 1;
+    min-height: 550px;
+    overflow: hidden;
+
+    background: #292929;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+
+      object-fit: cover;
+      object-position: center;
+
+      filter: grayscale(100%) contrast(1.1);
+      transition:
+        transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 1.2s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.035);
+      filter: grayscale(70%) contrast(1.05);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.15) 0%,
+        transparent 45%,
+        rgba(0, 0, 0, 0.55) 100%
+      );
+
+      pointer-events: none;
+    }
+  }
+
+  .image-label {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    z-index: 2;
+
+    font-family: $hs-mono;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+  }
+
+  .image-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding-top: 18px;
+
+    font-family: $hs-mono;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: $hs-grey;
+  }
+
+  /* --------------------------------------------------------
+     FOOTER
+     -------------------------------------------------------- */
+
+  .hypoxic-footer {
+    min-height: 125px;
+    padding: 35px clamp(24px, 4vw, 80px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    font-family: $hs-mono;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: $hs-grey;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    a {
+      color: $hs-white;
+      font-size: 10px;
+    }
+  }
+
+  /* --------------------------------------------------------
+     ENTRANCE ANIMATIONS
+     -------------------------------------------------------- */
+
+  .hero-title {
+    animation: hs-reveal 1s ease both;
+  }
+
+  .hero-content {
+    animation: hs-reveal 1.1s 0.15s ease both;
+  }
+
+  @keyframes hs-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* --------------------------------------------------------
+     TABLET
+     -------------------------------------------------------- */
+
+  @media (max-width: 1024px) {
+    .hero-title {
+      font-size: clamp(65px, 13.5vw, 150px);
+    }
+
+    .hero-content {
+      grid-template-columns: 45% minmax(0, 55%);
+    }
+
+    .hero-left {
+      padding-right: 25px;
+    }
+
+    .hero-left h2 {
+      font-size: clamp(40px, 5vw, 70px);
+    }
+
+    .image-frame {
+      min-height: 480px;
+    }
+  }
+
+  /* --------------------------------------------------------
+     MOBILE
+     -------------------------------------------------------- */
+
+  @media (max-width: 767px) {
+    .hypoxic-header {
+      min-height: 75px;
+    }
+
+    .hypoxic-logo {
+      font-size: 29px;
+    }
+
+    .header-info {
+      max-width: 155px;
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+    .hero-meta {
+      padding: 22px 0;
+      font-size: 9px;
+    }
+
+    .hero-title {
+      margin: 45px 0 55px;
+
+      font-size: clamp(52px, 13vw, 100px);
+      line-height: 0.88;
+      letter-spacing: -0.095em;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-left {
+      min-height: auto;
+      padding: 25px 0 45px;
+      border-right: 0;
+      border-bottom: 1px solid $hs-line;
+    }
+
+    .hero-left h2 {
+      margin: 0;
+      padding: 70px 0 40px;
+
+      font-size: clamp(54px, 11vw, 85px);
+    }
+
+    .hero-description {
+      max-width: 340px;
+      margin-bottom: 35px;
+    }
+
+    .hero-right {
+      padding: 22px 0;
+    }
+
+    .image-frame {
+      min-height: 450px;
+    }
+
+    .image-caption {
+      font-size: 8px;
+    }
+
+    .hypoxic-footer {
+      min-height: auto;
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 25px;
+
+      font-size: 9px;
+    }
+
+    .footer-links {
+      gap: 22px;
+    }
+  }
+
+  /* --------------------------------------------------------
+     SMALL PHONES
+     -------------------------------------------------------- */
+
+  @media (max-width: 380px) {
+    .hero-title {
+      font-size: 12.5vw;
+    }
+
+    .hero-left h2 {
+      font-size: 12vw;
+    }
+
+    .image-frame {
+      min-height: 350px;
+    }
+
+    .hypoxic-footer {
+      flex-direction: column;
+    }
+  }
+
+  /* --------------------------------------------------------
+     ACCESSIBILITY
+     -------------------------------------------------------- */
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
 
 
 /* ==========================================================

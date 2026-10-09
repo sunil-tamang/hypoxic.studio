@@ -1,890 +1,106 @@
 ---
-layout: 'default'
-slick_css: 'Yes'
-slick_js: 'Yes'
-author_name : "  "
+layout: default
+title: "HYPOXIC.STUDIO — Coming Soon"
+coming_soon: true
+slick_css: 'No'
+slick_js: 'No'
+author_name: "HYPOXIC.STUDIO"
 custom_bg: "bg/banner.jpg"
-tags : "Everest Base Camp Trek, Annapurna Circuit Trek, Annapurna Base Camp Trek, Langtang Valley Trek, Upper Mustang Trek, Manaslu Circuit Trek, Makalu Base Camp Trek "
-description : ""
+tags: "Film Studio, Expedition Filmmaking, Cinematography, Himalayan Stories"
+description: "HYPOXIC.STUDIO — An independent film studio based in Nepal. Stories from thin air."
 ---
 
-<!-- ==========================================================
-     EXPEDITION LOADER
-========================================================== -->
-
-<div class="expedition-loader" id="expeditionLoader">
-
-    <div class="expedition-loader-inner">
-
-        <span class="expedition-loader-label">
-
-            EXPEDITION START
-
-        </span>
-
-        <div class="expedition-loader-altitude">
-
-            <span id="altitudeCounter">
-
-                0
-
-            </span>
-
-            <small>
-
-                m
-
-            </small>
-
-        </div>
-
-        <div class="expedition-loader-route">
-
-            <div class="expedition-loader-progress" id="loaderProgress"></div>
-
-        </div>
-
-        <div class="expedition-loader-stage" id="loaderStage">
-
-            Preparing Equipment
-
-        </div>
-
-    </div>
-
-</div>
-
-{% assign video_slide = site.data.slideshow.slides | where: "type", "video" | first %}
-
-{% if video_slide %}
-<div class="homepage-hero">
-
-    <video
-        class="homepage-hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        poster="{{ '/assets/css/images/hero-poster.jpg' | relative_url }}"
-        controlsList="nodownload nofullscreen noremoteplayback"
-        oncontextmenu="return false">
-
-        <source
-            src="{{ site.baseurl }}{{ video_slide.src }}"
-            type="video/mp4">
-
-    </video>
-
-    <div class="homepage-hero-overlay"></div>
-
-    <div class="homepage-hero-frame"></div>
-
-
-
-    <!-- MAIN CONTENT -->
-
-    <div class="homepage-hero-content">
-
-        <div class="homepage-hero-text">
-
-            <div class="hero-kicker">
-                EXPEDITION FILMMAKER
-                <span>—</span>
-                MOUNTAIN CINEMATOGRAPHER
-            </div>
-
-
-            <h1 class="homepage-hero-title">
-                STORIES<br>
-                FROM THE<br>
-                HIMALAYAS.
-            </h1>
-
-
-           
-            <!-- INFORMATION -->
-
-            <div class="hero-meta">
-
-                <div class="hero-meta-item">
-                    <span>DISCIPLINE</span>
-                    <strong>
-                        FILM · DOCUMENTARY · CINEMATOGRAPHY
-                    </strong>
-                </div>
-
-                <div class="hero-meta-item">
-                    <span>TERRAIN</span>
-                    <strong>
-                        HIMALAYA · HIGH ALTITUDE · ALPINE
-                    </strong>
-                </div>
-
-                <div class="hero-meta-item">
-                    <span>WORK</span>
-                    <strong>
-                        EXPEDITIONS · MOUNTAIN STORIES
-                    </strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-    </div>
-
-
-    <!-- SIDE LABEL -->
-
-    <div class="hero-side-label">
-        FILM / MOUNTAINS / PEOPLE
-    </div>
-
-
-    <!-- SCROLL -->
-
-    <div class="hero-scroll" class="homepage-hero-scroll"
-id="heroScroll">
-        <span>SCROLL</span>
-        <span>↓</span>
-    </div>
-
-</div>
-{% endif %}
-
-
-<!-- <section class="intro-profile-section">
-
-    <div class="intro-profile-wrapper">
-
-
-        <div class="intro-profile-image">
-
-            <img
-                src="{{ site.baseurl }}{{ '/assets/css/images/team/taylor.jpg' | relative_url }}"
-                alt="Sunil Tamang">
-
-        </div>
-
-
-        <div class="intro-profile-content">
-
-            <div class="intro-profile-line"></div>
-
-            <h2 class="intro-profile-title">
-
-                Hey,<br>
-                I'm <span>Sunil</span>
-
-            </h2>
-
-            <p class="intro-profile-text">
-
-                I'm an <strong>Expedition Filmmaker</strong>,
-                <strong>Mountaineer</strong>, and aspiring
-                <strong>NNMGA Mountain Guide</strong> based in Nepal.
-
-                I create cinematic documentaries that capture
-                exploration, high-altitude expeditions, and life
-                in some of the world's most remote mountain
-                landscapes.
-
-            </p>
-
-            <a
-                href="{{ '/about/' | relative_url }}"
-                class="intro-profile-button">
-
-                READ MY STORY →
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>  -->
-
-<!-- <section class="cinema-quote">
-
-    <p class="cinema-quote-text">
-
-        "The mountains never tell the same story twice."
-
-    </p>
-
-    <span class="cinema-quote-author">
-
-        — Sunil Tamang
-
-    </span>
-
-</section> -->
-
-
-<!-- <section class="cinematic-intro-section" id="cinematic-intro">
-
-    <div class="cinematic-intro-wrapper">
-
-        <div class="cinematic-intro-image">
-
-            <img
-                src="{{ site.baseurl }}{{ '/assets/css/images/team/taylor.jpg' | relative_url }}"
-                alt="Sunil Tamang">
-
-        </div>
-
-        <div class="cinematic-intro-content">
-
-            <span class="cinematic-intro-label">
-
-                EXPEDITION FILMMAKER
-
-            </span>
-
-            <h2 class="cinematic-intro-name">
-
-                Sunil Tamang
-
-            </h2>
-
-            <p class="cinematic-intro-description">
-
-                Documenting the world's highest mountains through cinematic
-                storytelling while pursuing the path to becoming an
-                internationally certified mountain guide.
-
-            </p>
-
-            <a href="{{ '/about/' | relative_url }}"
-               class="cinematic-intro-link">
-
-                READ STORY →
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section> -->
-
-
- <section class="hero-intro-section" id="cinematic-intro">
-
-    <div class="hero-intro-wrapper">
-
-
-        <div class="hero-intro-left">
-
-            <span class="hero-intro-label">
-                INTRODUCTION
-            </span>
-
-            <h2 class="hero-intro-title">
-
-                HEY,<br>
-                I'M<br>
-                SUNIL
-
-            </h2>
-
-        </div>
-
-
-        <div class="hero-intro-photo">
-
-            <img src="{{ stie.baseurl }}{{ '/assets/css/images/team/taylor.jpg' | relative_url }}"
-                 alt="Sunil Tamang">
-
-        </div>
-
-
-        <div class="hero-intro-right">
-
-            <p>
-
-                Expedition filmmaker, mountaineer, and aspiring NNMGA / IFMGA
-                Mountain Guide based in Nepal. I create cinematic documentaries
-                that capture the beauty, struggle, and human stories found in
-                the world's highest mountains.
-
-            </p>
-
-            <a href="{{ '/about/' | relative_url }}" class="">
-
-                READ STORY →
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-
-
-<!-- ==========================================================
-     MOUNTAIN JOURNEY
-========================================================== -->
-
-<section class="mountain-journey">
-
-    <div class="mountain-journey-container">
-
-        <!-- ========================= -->
-        <!-- HEADER -->
-        <!-- ========================= -->
-
-        <div class="mountain-journey-header">
-
-            <div class="mountain-journey-title">
-
-                <span>THE</span>
-
-                <span class="mountain-journey-light">
-
-                    JOURNEY
-
-                </span>
-
-            </div>
-
-            <div class="mountain-journey-text">
-
-                <span class="mountain-journey-label">
-
-                    PROFESSIONAL DEVELOPMENT
-
-                </span>
-
-                <h2>
-
-                    From climber to mountain guide.
-
-                </h2>
-
-                <p>
-
-                    Every expedition teaches something new.
-                    I'm currently progressing through the Nepal
-                    National Mountain Guide Association with the
-                    long-term goal of achieving IFMGA certification,
-                    the world's highest international qualification
-                    for mountain guides.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ========================= -->
-        <!-- TIMELINE -->
-        <!-- ========================= -->
-
-        <div class="mountain-journey-timeline">
-
-            <!-- CURRENT -->
-
-            <div class="mountain-journey-stage">
-
-                <span class="mountain-journey-stage-label">
-
-                    CURRENT
-
-                </span>
-
-                <img
-                    src="{{ '/assets/css/images/logos/nnmga.png' | relative_url }}"
-                    alt="NNMGA">
-
-                <h3>
-
-                    NNMGA
-
-                </h3>
-
-                <p>
-
-                    Mountain Guide Candidate
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CENTER -->
-
-            <div class="mountain-journey-progress">
-
-                <div class="mountain-journey-line"></div>
-
-                <div class="mountain-journey-dot mountain-journey-dot-current"></div>
-
-                <div class="mountain-journey-line"></div>
-
-                <div class="mountain-journey-dot"></div>
-
-                <div class="mountain-journey-line"></div>
-
-            </div>
-
-
-
-            <!-- FUTURE -->
-
-            <div class="mountain-journey-stage">
-
-                <span class="mountain-journey-stage-label">
-
-                    FUTURE GOAL
-
-                </span>
-
-                <a
-                    href="https://ifmga.info/"
-                    target="_blank">
-
-                    <img
-                        src="{{ '/assets/css/images/logos/ifmga.png' | relative_url }}"
-                        alt="IFMGA">
-
-                </a>
-
-                <h3>
-
-                    IFMGA
-
-                </h3>
-
-                <p>
-
-                    International Mountain Guide
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ==========================================================
-     SUMMIT SHOWCASE
-========================================================== -->
-
-<section class="summit-showcase">
-
-    <div class="summit-showcase-wrapper">
-
-        <!-- ==========================
-             Heading
-        =========================== -->
-
-        <div class="summit-showcase-header">
-
-            <span class="summit-showcase-label">
-
-                CLIMB WITH ME
-
-            </span>
-
-            <h2 class="summit-showcase-title">
-
-                Choose your<br>
-                next adventure.
-
-            </h2>
-
-            <p class="summit-showcase-description">
-
-                When I'm not documenting expeditions, I'm climbing. From frozen waterfalls and granite walls to alpine ridges and Himalayan peaks, these are the experiences I guide and train for throughout the year.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- ==========================
-             Cards
-        =========================== -->
-
-        <div class="summit-showcase-grid">
-
-            {% assign ordered_services = site.services | sort:"order" %}
-
-            {% for service in ordered_services %}
-
-            <a
-                href="{{ service.url | relative_url }}"
-                class="summit-card {% if forloop.first %}summit-card-featured{% endif %}">
-
-                <!-- Background -->
-
-                <img
-                    class="summit-card-background"
-                    src="{{ service.card_image | relative_url }}"
-                    alt="{{ service.title }}">
-
-
-                <!-- Overlay -->
-
-                <div class="summit-card-overlay"></div>
-
-
-                <!-- Large Number -->
-
-                <span class="summit-card-number">
-
-                    {{ forloop.index | prepend:"0" }}
-
-                </span>
-
-
-                <!-- Content -->
-
-                <div class="summit-card-content">
-
-                    <h3>
-
-                        {{ service.card_title }}
-
-                    </h3>
-
-                    <p>
-
-                        {{ service.card_subtitle }}
-
-                    </p>
-
-                    <span class="summit-card-link">
-
-                        Explore →
-
-                    </span>
-
-                </div>
-
-            </a>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     SELECTED COLLABORATIONS
-========================================= -->
-
-<!-- <section class="collaboration-showcase">
-
-
-    <div class="collaboration-topo"></div>
-
-    <div class="collaboration-wrapper">
-
-        <span class="collaboration-label">
-
-            SELECTED COLLABORATIONS
-
-        </span>
-
-        <h2 class="collaboration-heading">
-
-            Expedition Partners.
-
-        </h2>
-
-        <p class="collaboration-description">
-
-            I've collaborated with production companies,
-            expedition teams and outdoor brands to document
-            stories across the Himalayas—from commercial
-            campaigns to high-altitude documentaries.
-
-        </p>
-
-        <div class="collaboration-cloud">
-
-            <div class="collaboration-logo collaboration-netflix">
-                <img src="{{ '/assets/css/images/clients/langtang.png' | relative_url }}" alt="">
-            </div>
-
-            <div class="collaboration-logo collaboration-discovery">
-                <img src="{{ '/assets/css/images/clients/discovery.png' | relative_url }}" alt="">
-            </div>
-
-            <div class="collaboration-logo collaboration-dvg">
-                <img src="{{ '/assets/css/images/clients/DVG.png' | relative_url }}" alt="">
-            </div>
-
-            <div class="collaboration-logo collaboration-v8">
-                <img src="{{ '/assets/css/images/clients/V8.png' | relative_url }}" alt="">
-            </div>
-
-            <div class="collaboration-logo collaboration-natgeo">
-                <img src="{{ '/assets/css/images/clients/natgeo.jpg' | relative_url }}" alt="">
-            </div>
-
-            <div class="collaboration-logo collaboration-tnf">
-                <img src="{{ '/assets/css/images/clients/thenorthface.png' | relative_url }}" alt="">
-            </div>
-
-            <div class="collaboration-logo collaboration-scarpa">
-                <img src="{{ '/assets/css/images/clients/scarpa.jpeg' | relative_url }}" alt="">
-            </div>
-
-        </div>
-
-    </div>
-
-</section> -->
-
-
-<!-- <section class="trusted-by">
-
-    <div class="trusted-container">
-
-        <div class="trusted-divider"></div>
-
-        <h2 class="trusted-title">
-            Trusted By
-        </h2>
-
-        <p class="trusted-text">
-            Organizations and brands I've collaborated with while documenting
-            expeditions throughout the Himalayas.
-        </p>
-
-        <div class="trusted-divider"></div>
-
-        <div class="trusted-logos">
-
-            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/netflix.jpg' | relative_url }}" alt="Netflix">
-
-            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/discovery.svg' | relative_url }}" alt="Discovery">
-
-            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/DVG.png' | relative_url }}" alt="DVG">
-
-            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/V8.png' | relative_url }}" alt="V8">
-
-            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/natgeo.jpg' | relative_url }}" alt="National Geographic">
-
-            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/thenorthface.jpg' | relative_url }}" alt="The North Face">
-
-            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/scarpa.jpeg' | relative_url }}" alt="Scarpa">
-
-            <img src="{{ site.baseurl }}{{ '/assets/css/images/clients/osprey.svg' | relative_url }}" alt="Osprey">
-
-        </div>
-
-    </div>
-
-</section> -->
-
-
-<section class="clients">
-
-    <div class="clients-container">
-
-        <p class="clients-title">
-            CLIENTS
-        </p>
-
-        <div class="clients-logos">
-
-            <!-- <img src="{{ site.baseurl }}/assets/css/images/clients/netflix.jpg" alt="Netflix"> -->
-
-            <!-- <img src="{{ site.baseurl }}/assets/css/images/clients/discovery.svg" alt="Discovery"> -->
-
-            <img src="{{ site.baseurl }}/assets/css/images/clients/DVG.png" alt="Red Bull">
-
-            <img src="{{ site.baseurl }}/assets/css/images/clients/V8.png" alt="BBC">
-            
-            <img src="{{ site.baseurl }}/assets/css/images/clients/natgeo.jpg" alt="National Geographic">
-
-            <!-- <img src="{{ site.baseurl }}/assets/css/images/clients/thenorthface.jpg" alt="The North Face"> -->
-
-            <img src="{{ site.baseurl }}/assets/css/images/clients/scarpa.jpeg" alt="Scarpa">
-
-            <!-- <img src="{{ site.baseurl }}/assets/css/images/clients/osprey.svg" alt="Osprey"> -->
-
-        </div>
-
-    </div>
-
-</section> 
-
-
-<section class="featured-work">
-
-    <div class="film-catalogue-header">
-
-    <div class="film-catalogue-left">
-
-        <span class="film-catalogue-label">
-
-            FEATURED WORK
-
-        </span>
-
-   
-
-        <div class="featured-number">
-
-            <span class="featured-number-value">
-
-               {{ site.data.films.size }}
-
-            </span>
-
-            <div class="featured-number-text">
-
-                <span>Selected</span> 
-                <span>Films</span>
-
-            </div>
-
-        </div>
-
-        
-
-    </div>
-
-    <div class="film-catalogue-right">
-
-        <p>
-
-            A curated collection of expedition documentaries,
-            commercial productions, and mountain stories filmed
-            across the Himalayas.
-
-        </p>
-
-        <div class="film-catalogue-navigation">
-
-            <button class="featured-prev">
-
-                ←
-
-            </button>
-
-            <button class="featured-next">
-
-                →
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-<div class="featured-slider">
-
-    {% for pair in site.data.films %}
-
-    {% assign slug = pair[0] %}
-    {% assign film = pair[1] %}
-
-    <a href="{{ '/films/' | append: slug | append:'/' | relative_url }}"
-       class="featured-card">
-
-        <!-- VIDEO -->
-        <video
-            class="featured-video"
-            muted
-            autoplay
-            loop
-            playsinline
-            preload="metadata">
-
-            <source src="{{ film.hover_video | relative_url }}" type="video/mp4">
-
-        </video>
-
-        <!-- DARK OVERLAY -->
-        <div class="featured-overlay"></div>
-
-        <!-- TEXT OVERLAY -->
-        <div class="featured-overlay-text">
-
-            <h3>{{ film.title }}</h3>
-
-            <span>{{ film.category }}</span>
-
-        </div>
-
+<main class="hypoxic-landing">
+
+  <header class="hypoxic-header">
+    <a href="{{ '/' | relative_url }}"
+       class="hypoxic-logo">
+      H/S<span>®</span>
     </a>
 
-    {% endfor %}
+    <span class="header-info">
+      INDEPENDENT FILM STUDIO — NEPAL
+    </span>
+  </header>
 
-</div>
+  <section class="hypoxic-hero">
 
-    <div class="featured-button">
+    <div class="hero-meta">
+      <span>[ 001 — INTRODUCTION ]</span>
+      <span>EST. 2026 / NEPAL</span>
+    </div>
 
-        <a href="{{ site.baseurl }}/films/">
+    <h1 class="hero-title">
+      HYPOXIC<span>.</span><br>
+      STUDIO
+    </h1>
 
-            VIEW ALL PROJECTS →
+    <div class="hero-content">
 
-        </a>
+      <div class="hero-left">
+        <p class="hero-label">
+          FILM / EXPEDITION / STORYTELLING
+        </p>
+
+        <h2>
+          STORIES<br>
+          FROM<br>
+          THIN AIR.
+        </h2>
+
+        <p class="hero-description">
+          An independent film studio exploring
+          the intersection of adventure,
+          altitude, and human stories.
+        </p>
+
+        <div class="coming-soon">
+          <span class="status-dot"></span>
+          WEBSITE COMING SOON
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="image-frame">
+          <img
+            src="{{ '/assets/css/images/expedition.jpg' | relative_url }}"
+            alt="Himalayan expedition"
+            loading="eager">
+
+          <span class="image-label">
+            H/S — VISUAL ARCHIVE 001
+          </span>
+        </div>
+
+        <div class="image-caption">
+          <span>FIG. 01 — THE HIMALAYAS</span>
+          <span>NEPAL / 2026</span>
+        </div>
+      </div>
 
     </div>
 
-</section>
+  </section>
 
-  
-<!-- <div class="container-wide row--padding-medium " >
+  <footer class="hypoxic-footer">
+    <span>© 2026 HYPOXIC.STUDIO</span>
 
+    <div class="footer-links">
+      <a href="mailto:hello@hypoxicstudio.com">
+        EMAIL ↗
+      </a>
 
+      <a href="https://instagram.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        INSTAGRAM ↗
+      </a>
+    </div>
 
-  <h1 class="content__title">EXPEDITIONS</h1> <br/>
-  
-        <div class="mountain-cards-container">
-            {% for summit in site.data.summit %}
-            <a href="{{ summit.slug | prepend: '/summits/' | relative_url }}" class="mountain-card" style="background-image: url('{{ summit.image | prepend: '/assets' | relative_url }}');">
-                <div class="mountain-overlays">
-                    <h2 class="content__title"> {{ summit.name }}</h2>
-                    <p class="summit-details">Elevation: {{ summit.elevation }} meters</p>
-                    <p class="summit-details">Country: {{ summit.country }}</p>
-                    <p class="summit-details">Year: {{ summit.year }}</p>
-                </div>
-            </a>
+    <span>CRAFTED AT ALTITUDE.</span>
+  </footer>
 
-            {% endfor %}
-
-
-
-        </div>
-
-
-</div> -->
-
+</main>
 
 
 <script type="application/ld+json">
@@ -897,52 +113,15 @@ id="heroScroll">
 </script>
 	
 	
+
 <script>
+
 document.addEventListener("DOMContentLoaded", () => {
+  const year = document.getElementById("year");
 
-    const hero = document.querySelector(".homepage-hero");
-    const video = document.querySelector(".homepage-hero-video");
-
-    if (!hero || !video) return;
-
-    /* Disable interactions */
-
-    video.style.pointerEvents = "none";
-
-    hero.addEventListener("contextmenu", e => e.preventDefault());
-
-    video.addEventListener("contextmenu", e => e.preventDefault());
-
-    /* Fade in when video is ready */
-
-    const showHero = () => {
-
-        hero.classList.add("is-loaded");
-
-    };
-
-    /* If already loaded */
-
-    if (video.readyState >= 2) {
-
-        showHero();
-
-    } else {
-
-        video.addEventListener("loadeddata", showHero);
-
-    }
-
-    /* Fallback if video fails */
-
-    video.addEventListener("error", () => {
-
-        hero.style.background =
-            "linear-gradient(135deg,#111,#222)";
-
-        hero.classList.add("is-loaded");
-
-    });
-
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 });
+
 </script>

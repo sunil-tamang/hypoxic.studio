@@ -1,15 +1,13 @@
-title: Sunil Tamang
-name: Sunil Tamang
-email: ""
-description: >-
-  Outdoor Adventure
-
 # Uncomment when using GitHub Pages
 # url: "https://sunil-tamang.github.io"
 # baseurl: "/sunil-tamang"
 
-url: "https://tamangsunil.com"
+title: HYPOXIC.STUDIO
+description: Independent Film Studio — Nepal
+url: "https://hypoxicstudio.com"
 baseurl: ""
+name: Sunil Tamang
+email: ""
 
 # Pretty URLs
 permalink: pretty
