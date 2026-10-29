@@ -236,7 +236,7 @@ html { scrollbar-gutter: stable; }
   .hs-menu-links small { font-size: 16px; }
   .hs-menu-image { min-height: 280px; border-radius: 24px; }
   .hs-menu-image::after { display: none; }
-  .hs-menu-bottom { position: absolute; left: 28px; top: 244px; padding-top: 0; }
+  .hs-menu-bottom { position: static; padding-top: 28px; }
   .hs-menu-email { font: 16px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -.03em; }
   .hs-menu-bottom p { color: #969693; margin-top: 8px; }
   .hs-menu-work { display: none; }
@@ -449,3 +449,10 @@ body.hs-home .hs-footer::before { background-position: right bottom; }
   body.hs-home .hs-contact-story::before,
   body.hs-home .hs-footer::before { opacity: .14; background-size: auto 85%; }
 }
+
+/* Keep five desktop card titles readable within the existing accordion. */
+@media(min-width:1101px) {
+ .hs-home .hs-capabilities-five .hs-capability-copy {left:14px;right:14px;}
+ .hs-home .hs-capabilities-five .hs-capability-copy h3 {font-size:clamp(17px,1.55vw,28px);}
+}
+

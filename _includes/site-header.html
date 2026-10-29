@@ -9,6 +9,7 @@
       <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
       <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
       <a href="{{ '/films/' | relative_url }}" {% if page.url == '/films/' %}aria-current="page"{% endif %}>Projects</a>
+      <a href="{{ '/studio/' | relative_url }}" {% if page.url == '/studio/' %}aria-current="page"{% endif %}>Studio</a>
       <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
     </nav>
     <a class="hs-cta hs-desktop-cta" href="mailto:hello@hypoxicstudio.com">Start a project</a>
@@ -20,16 +21,17 @@
         <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}><span>Home</span><small>(01)</small></a>
         <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}><span>About</span><small>(02)</small></a>
         <a href="{{ '/films/' | relative_url }}" {% if page.url == '/films/' %}aria-current="page"{% endif %}><span>Projects</span><small>(03)</small></a>
-        <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}><span>Contact</span><small>(04)</small></a>
+        <a href="{{ '/studio/' | relative_url }}" {% if page.url == '/studio/' %}aria-current="page"{% endif %}><span>Studio</span><small>(04)</small></a>
+        <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}><span>Contact</span><small>(05)</small></a>
       </nav>
       <div class="hs-menu-image">
-        <img src="{{ '/assets/css/images/expedition.jpg' | relative_url }}" alt="Himalayan mountain landscape" loading="lazy">
+        <img src="{{ '/assets/css/images/still.jpg' | relative_url }}" alt="Mountain and rock landscape" loading="lazy">
         <span>Hypoxic® Studio</span>
         <small>© {{ site.time | date: '%Y' }} All rights reserved</small>
       </div>
     </div>
     <div class="hs-menu-bottom">
-      <div><a class="hs-menu-email" href="mailto:hello@hypoxicstudio.com">hello@hypoxicstudio.com</a><p>Nepal · Working worldwide</p></div>
+      <div><a class="hs-menu-email" href="mailto:hello@hypoxic.com">hello@hypoxic.com</a><p>Nepal · Working worldwide</p></div>
       <a class="hs-cta hs-mobile-cta" href="mailto:hello@hypoxicstudio.com">Start a project</a>
       <a class="hs-menu-work" href="{{ '/films/' | relative_url }}" {% if page.url == '/films/' %}aria-current="page"{% endif %}>Explore our films ↗</a>
     </div>

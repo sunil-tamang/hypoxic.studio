@@ -3,133 +3,35 @@ layout: default
 title: Films
 permalink: /films/
 ---
-
-<!-- <link rel="stylesheet" href="{{ '/assets/css/films.css' | relative_url }}"> -->
-
-<!-- <section class="films-page">
-
-  <h1 class="films-title">Films</h1>
-
-  <div class="films-grid">
-
-    {% for pair in site.data.films %}
-      {% assign slug = pair[0] %}
-      {% assign film = pair[1] %}
-
-      <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}" class="film-card">
-
-       
-        <img class="film-thumb" src="{{ film.thumbnail | relative_url }}" alt="{{ film.title }}">
-
-
-        {% if film.hover_video %}
-        <video class="film-video" muted preload="metadata" loop>
-          <source src="{{ film.hover_video | relative_url }}" type="video/mp4">
-        </video>
-        {% endif %}
-
-        <div class="film-info">
-          <h2 class="film-title">{{ film.title }}</h2>
-          <p class="film-meta">{{ film.year }} • {{ film.category }}</p>
-        </div>
-
-      </a>
-
-    {% endfor %}
-
-  </div>
-
-</section> -->
-
-
-
-<section class="films-page">
-
-    <div class="films-header">
-
-        <h1>WORK</h1>
-
-        <div class="view-switch">
-
-            <button class="active" id="gridBtn">Grid</button>
-
-            <span>/</span>
-
-            <button id="listBtn">List</button>
-
-        </div>
-
-    </div>
-
-    <div class="films-grid" id="filmsGrid">
-
-        {% for pair in site.data.films %}
-        {% assign slug = pair[0] %}
-        {% assign film = pair[1] %}
-
-        <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}"
-        class="film-card">
-
-            <img
-                class="film-thumb"
-                src="{{ film.thumbnail | relative_url }}"
-                alt="{{ film.title }}">
-
-            {% if film.hover_video %}
-            <video
-                class="film-video"
-                muted
-                loop
-                playsinline
-                preload="auto">
-
-                <source
-                    src="{{ film.hover_video | relative_url }}"
-                    type="video/mp4">
-
-            </video>
-            {% endif %}
-            <div class="film-overlay">
-
-                <h2>{{ film.title }}</h2>
-                <p>{{ film.category }}</p>
-
-            </div>
-
-        </a>
-
-        {% endfor %}
-
-    </div>
-
-
-
-    <div class="films-list" id="filmsList">
-
-        {% for pair in site.data.films %}
-        {% assign slug = pair[0] %}
-        {% assign film = pair[1] %}
-
-        <a href="{{ '/films/' | append: slug | append: '/' | relative_url }}"
-           class="film-row">
-
-            <span class="film-name">
-                {{ film.title }}
-            </span>
-
-            <span class="film-category">
-                {{ film.category }}
-            </span>
-
-            <span class="film-year">
-                {{ film.year }}
-            </span>
-
-        </a>
-
-        {% endfor %}
-
-    </div>
-
+<link rel="stylesheet" href="{{ '/assets/css/film-editorial.css' | relative_url }}">
+<section class="film-editorial-index project-showcase" data-view="grid">
+ <div class="films-header"><h1>Our films.</h1><div class="project-view" aria-label="Project view"><button type="button" id="gridBtn" aria-pressed="true">Grid</button><span>/</span><button type="button" id="listBtn" aria-pressed="false">List</button></div></div>
+ <nav class="film-filters" aria-label="Project categories">
+ {% assign categories = 'All projects|Photo|Podcasts|Documentary|Expedition|Commercial|Short Film' | split: '|' %}
+ {% for category in categories %}<button type="button" data-film-filter="{% unless forloop.first %}{{ category }}{% endunless %}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">/ {{ category }}</button>{% endfor %}
+ </nav>
+ <div class="project-layout">
+ <nav class="project-sidebar" aria-label="Categories and project counts">
+ {% for category in categories %}<button type="button" data-film-filter="{% unless forloop.first %}{{ category }}{% endunless %}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"><span>{% if forloop.first %}All{% else %}{{ category }}{% endif %}</span><span data-category-count>0</span></button>{% endfor %}
+ </nav>
+ <div class="project-results">
+ <div class="project-rail" id="filmsGrid" aria-label="Film gallery" tabindex="0">
+ {% for pair in site.data.films %}{% assign film = pair[1] %}
+ <a class="project-card" data-film-category="{{ film.category | escape }}" href="{{ '/films/' | append: pair[0] | append: '/' | relative_url }}">
+ <div class="project-image"><img src="{{ film.thumbnail | relative_url }}" alt="{{ film.title | escape }}" loading="lazy">
+ {% if film.hover_video %}<video muted loop playsinline preload="none" aria-hidden="true" poster="{{ film.thumbnail | relative_url }}"><source src="{{ film.hover_video | relative_url }}" type="video/mp4"></video>{% endif %}
+ <div class="project-image-meta"><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span>{{ film.year }}</span></div></div>
+ <div class="project-caption"><p>{{ film.category }}</p><h2>{{ film.title }}</h2></div></a>
+ {% endfor %}
+ </div>
+ <div class="project-table" id="filmsList">
+ <div class="project-table-head"><span>#</span><span>Project</span><span>Type</span><span>Year</span><span>Duration</span><span>Location</span></div>
+ {% for pair in site.data.films %}{% assign film = pair[1] %}
+ <a class="project-table-row" data-film-category="{{ film.category | escape }}" href="{{ '/films/' | append: pair[0] | append: '/' | relative_url }}"><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span class="project-table-title"><img src="{{ film.thumbnail | relative_url }}" alt="" loading="lazy"><span>{{ film.title }}</span></span><span>{{ film.category }}</span><span>{{ film.year }}</span><span>{{ film.duration }}</span><span>{{ film.location }}</span></a>
+ {% endfor %}
+ </div>
+ <p class="film-filter-empty" hidden>No projects in this category yet.</p>
+ <div class="project-controls"><span data-project-position>01 / {{ site.data.films | size }}</span><progress max="{{ site.data.films | size }}" value="1" aria-label="Gallery position"></progress><div><button type="button" data-project-prev aria-label="Previous projects">←</button><button type="button" data-project-next aria-label="Next projects">→</button></div></div>
+ </div></div><p class="film-filter-status" aria-live="polite" aria-atomic="true"></p>
 </section>
-
+<script src="{{ '/assets/js/film-filters.js' | relative_url }}" defer></script>

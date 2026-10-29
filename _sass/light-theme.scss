@@ -81,3 +81,13 @@ body, body.hs-home {
 /* Use one continuous background instead of stacking local contour overlays. */
 body.hs-home .hs-contact-story::before, body.hs-home .hs-footer::before { display:none; }
 @media(max-width:700px) { body,body.hs-home { background-size:1000px 750px; } }
+
+/* Paint the texture on the actual content surfaces: legacy wrappers can hide body backgrounds. */
+.hs-page-content, .hs-chrome-footer {
+ background-color:#fff;
+ background-image:url('images/studio-contours.svg');
+ background-size:1440px 1080px;
+ background-repeat:repeat;
+}
+.hs-chrome-footer .hs-footer {background:transparent;}
+@media(max-width:700px){.hs-page-content,.hs-chrome-footer{background-size:1000px 750px}}

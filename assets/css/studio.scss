@@ -1,0 +1,122 @@
+---
+---
+.studio-space-page {width:85%;max-width:1600px;margin:auto;padding:70px 0 120px;color:#151515;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+.studio-space-page * {box-sizing:border-box;}
+.studio-space-page :is(h1,h2,h3,p,a,label,input,select,textarea,button) {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:0;text-transform:none;font-variant:normal;}
+.studio-space-page section+section {margin-top:clamp(80px,10vw,150px);}
+.studio-space-page h1 {font-size:clamp(52px,7vw,110px);line-height:1;letter-spacing:-.05em;font-weight:400;margin:32px 0;}
+.space-label,.space-section-title {font-size:13px;}
+.space-intro-bottom,.space-section-title {display:flex;justify-content:space-between;align-items:center;gap:28px;}
+.studio-space-page p {font-size:17px;line-height:1.55;color:#777;}
+.space-section-title {margin-bottom:32px;}.space-section-title h2 {font-size:13px;font-weight:400;margin:0;}.space-section-title>span{color:#777;}
+.studio-space-page .space-button {display:inline-block;border:0;border-radius:30px;background:#171717;color:white;padding:14px 24px;text-decoration:none;font-size:14px;cursor:pointer;}
+.space-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.space-card {display:flex;flex-direction:column;overflow:hidden;border-radius:17px;background:rgba(241,241,238,.75);}
+.space-photo {display:block;width:100%;aspect-ratio:4/3;object-fit:cover;}
+.space-card-content {padding:26px;display:flex;flex-direction:column;flex:1;}
+.studio-space-page .space-card-content .space-label {font-size:12px;}
+.studio-space-page h3 {font-size:clamp(27px,3vw,44px);font-weight:400;line-height:1.12;letter-spacing:-.035em;margin:20px 0;}
+.space-options {display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:18px 0;margin-top:auto;}.space-options li {font-size:11px;border:1px solid #ccc;padding:7px 10px;border-radius:20px;}
+.space-card a {display:flex;justify-content:space-between;color:inherit;text-decoration:none;font-size:14px;padding-top:12px;}
+.space-gear-intro,.space-booking-layout {display:grid;grid-template-columns:1fr 1fr;gap:10%;}.space-gear-intro h3 {margin:0;}
+.space-gear-list {list-style:none;padding:0;}.space-gear-list li{padding:24px 0;border-bottom:1px solid #ddd;}
+.space-booking-layout>div>p {max-width:440px;}.space-booking-layout a {color:inherit;}
+.studio-space-page .space-booking-note {font-size:13px;}
+.space-form-grid {display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.studio-space-page label {display:flex;flex-direction:column;gap:8px;font-size:13px;margin-bottom:18px;}
+.studio-space-page label[hidden]{display:none;}
+.studio-space-page :is(input,select,textarea){width:100%;min-width:0;border:1px solid #d4d4d0;border-radius:10px;padding:13px;background:rgba(255,255,255,.8);color:#222;font-size:16px;}
+.studio-space-page textarea{resize:vertical;}
+.studio-space-page :is(a,button,input,select,textarea):focus-visible{outline:2px solid #777;outline-offset:4px;}
+#space-booking-status{font-size:13px;}
+@media(max-width:800px){.studio-space-page{width:90%;padding-top:40px}.space-grid,.space-gear-intro,.space-booking-layout{grid-template-columns:1fr;gap:24px}.space-intro-bottom{align-items:flex-start;flex-direction:column}.space-card-content{padding:24px}}
+@media(max-width:450px){.space-form-grid{grid-template-columns:1fr;gap:0}}
+
+/* Rental details use the site's existing Helvetica typography. */
+.studio-space-page :is(th,td,li,h4,caption,span) {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-variant:normal;text-transform:none;letter-spacing:0;}
+.space-rate-wrap {margin:24px 0 8px;overflow-x:auto;}
+.space-rates {width:100%;border-collapse:collapse;table-layout:fixed;color:#222;}
+.space-rates caption {text-align:left;font-size:12px;color:#777;margin-bottom:14px;}
+.space-rates th,.space-rates td {padding:12px 5px;border-bottom:1px solid #d6d6d2;text-align:left;vertical-align:top;font-size:12px;line-height:1.5;}
+.space-rates thead th {font-size:11px;color:#777;font-weight:400;}
+.space-rates tbody th {font-weight:400;}
+.space-rates td {white-space:nowrap;font-variant-numeric:tabular-nums;}
+.space-equipment h4 {font-size:13px;font-weight:500;margin:22px 0 10px;}
+.space-equipment ul {list-style:none;padding:0;margin:0;}
+.space-equipment li {font-size:13px;line-height:1.8;color:#666;}
+.space-card-content>a {margin-top:auto;padding-top:28px;}
+.space-photo {flex-shrink:0;}
+@media(min-width:801px) and (max-width:1150px){.space-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Rental editorial sections; shared branding remains unchanged. */
+.rental-hero,.rental-feature {display:block;width:100%;object-fit:cover;border-radius:12px;}
+.rental-hero {aspect-ratio:2.4;margin-bottom:38px;}
+.rental-feature {aspect-ratio:2.1;}
+.studio-space-page .rental-studio .space-section-title h2 {font-size:clamp(25px,3vw,42px);letter-spacing:-.03em;}
+.studio-space-page .rental-description {font-size:clamp(18px,1.8vw,25px);max-width:800px;margin:30px 0;}
+.rental-gallery {display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:24px 0;}
+.rental-gallery>img,.rental-gallery-placeholder {flex:0 0 calc((100% - 28px)/3);min-width:200px;aspect-ratio:1.6;object-fit:cover;scroll-snap-align:start;}
+.rental-gallery-placeholder {display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(235,235,231,.45);color:#777;font-size:14px;gap:10px;}
+.rental-gallery-placeholder span{font-size:11px;}
+.rental-equipment {display:grid;grid-template-columns:1fr 1fr;gap:8%;margin:40px 0;}
+.studio-space-page .rental-equipment h3,.studio-space-page .rental-price-layout h3 {font-size:24px;line-height:1.2;}
+.studio-space-page .rental-equipment p {font-size:13px;}
+.rental-equipment ul {list-style:none;padding:0;margin:22px 0;}
+.rental-equipment li {font-size:15px;line-height:1.6;padding:5px 0;color:#666;}
+.rental-price-layout {display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start;margin:24px 0 32px;}
+.rental-price-layout .space-rate-wrap {margin:0;}
+.rental-price-layout .space-rates :is(th,td){font-size:14px;padding:16px 8px;}
+.rental-service-list {list-style:none;padding:0;margin:0;}
+.rental-service-list li {display:flex;justify-content:space-between;gap:24px;padding:20px 0;border-bottom:1px solid #ddd;}
+.rental-service-list small{color:#777;font-size:13px;}
+.rental-addons {padding:0;border:0;margin:10px 0 25px;}
+.rental-addons legend{font-size:13px;margin-bottom:14px;}
+.studio-space-page .rental-addons label {flex-direction:row;align-items:center;gap:10px;font-size:13px;margin:0 0 12px;}
+.studio-space-page .rental-addons input {width:16px;height:16px;padding:0;accent-color:#222;}
+@media(hover:hover){.rental-gallery img{transition:opacity .3s}.rental-gallery img:hover{opacity:.85}}
+@media(max-width:700px){.rental-hero,.rental-feature{aspect-ratio:1.35}.rental-equipment,.rental-price-layout{grid-template-columns:1fr;gap:20px}.rental-gallery>img,.rental-gallery-placeholder{flex-basis:75%}.rental-price-layout .space-rates :is(th,td){font-size:12px;padding:12px 4px}.rental-service-list li{flex-direction:column;gap:7px}}
+@media(prefers-reduced-motion:reduce){.rental-gallery img{transition:none}}
+
+/* Tabbed rental showcase in Hypoxic's existing editorial palette. */
+.studio-space-page .space-intro h1 {font-size:clamp(46px,6vw,88px);}
+.studio-space-page .rental-intro-aside {font-size:14px;max-width:300px;border-left:1px solid #bbb;padding-left:24px;}
+.rental-showcase {margin-top:60px;}
+.rental-tabs {display:flex;gap:30px;border-bottom:1px solid #ddd;margin-bottom:28px;overflow-x:auto;}
+.rental-tabs button {font:400 15px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;white-space:nowrap;background:none;color:#777;border:0;border-bottom:2px solid transparent;padding:14px 0;cursor:pointer;}
+.rental-tabs button[aria-selected="true"] {color:#111;border-bottom-color:#111;}
+.studio-space-page .rental-studio {display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:40px;align-items:start;margin:0;}
+.studio-space-page .rental-studio[hidden] {display:none;}
+.rental-visuals {min-width:0;}
+.rental-visuals .rental-feature {aspect-ratio:1.35;border-radius:12px;}
+.rental-thumbnails {display:flex;gap:10px;overflow-x:auto;margin-top:14px;padding:3px;}
+.rental-thumbnails button {flex:0 0 90px;padding:3px;border:1px solid transparent;border-radius:6px;background:none;cursor:pointer;}
+.rental-thumbnails button[aria-pressed="true"] {border-color:#333;}
+.rental-thumbnails img {display:block;width:100%;aspect-ratio:1.35;object-fit:cover;border-radius:3px;}
+.studio-space-page .rental-details h2 {font-size:clamp(28px,3vw,44px);font-weight:400;line-height:1.1;letter-spacing:-.035em;margin:12px 0 20px;}
+.studio-space-page .rental-details .rental-description {font-size:16px;line-height:1.55;margin:0 0 28px;}
+.rental-accordions details {border-top:1px solid #ddd;padding:16px 0;}
+.rental-accordions details:last-child {border-bottom:1px solid #ddd;}
+.rental-accordions summary {cursor:pointer;font-size:13px;list-style:none;display:flex;justify-content:space-between;gap:15px;}
+.rental-accordions summary::-webkit-details-marker {display:none;}
+.rental-accordions summary::after {content:'+';color:#777;}
+.rental-accordions details[open] summary::after {content:'−';}
+.rental-accordions ul {list-style:none;padding:0;margin:18px 0 0;}
+.rental-accordions li {font-size:13px;line-height:1.7;color:#777;}
+.studio-space-page .rental-accordions p {font-size:13px;}
+.rental-details .space-rates {border:1px solid #ddd;}
+.rental-details .space-rates :is(th,td) {font-size:12px;padding:12px 8px;}
+.rental-service-list {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 36px;}
+.rental-service-list li {flex-direction:column;gap:8px;font-size:15px;}
+.rental-showcase + section {margin-top:100px;}
+.studio-space-page summary:focus-visible {outline:2px solid #777;outline-offset:5px;}
+@media(max-width:950px){.studio-space-page .rental-studio{grid-template-columns:1fr;gap:24px}.rental-service-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.rental-service-list{grid-template-columns:1fr}.rental-tabs{gap:20px}.studio-space-page .rental-intro-aside{border:0;padding:0}.rental-showcase+section{margin-top:70px}}
+
+/* Match About typography explicitly instead of inheriting legacy page fonts. */
+.studio-space-page {font-weight:400;font-style:normal;letter-spacing:0;}
+.studio-space-page :is(summary,legend,small,strong) {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-style:normal;font-variant:normal;text-transform:none;letter-spacing:0;}
+.studio-space-page :is(p,a,button,label,input,select,textarea,summary,legend,li,td,caption,small) {font-weight:400;font-style:normal;}
+.studio-space-page .space-intro h1 {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;line-height:1.1;letter-spacing:-.035em;}
+.studio-space-page :is(.rental-details h2,.space-booking-layout h3) {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;line-height:1.1;letter-spacing:-.035em;}
+.studio-space-page .space-section-title h2 {font:400 13px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:0;}
+.studio-space-page .space-label {font:400 13px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:0;}

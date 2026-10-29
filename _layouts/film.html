@@ -4,7 +4,19 @@ layout: default
 
 {% assign film = site.data.films[page.slug] %}
 
-<section class="film-project">
+{% if page.slug == 'xander' %}<link rel="stylesheet" href="{{ '/assets/css/film-editorial.css' | relative_url }}">{% endif %}
+<section class="film-project{% if page.slug == 'xander' %} film-editorial-detail{% endif %}">
+{% if page.slug == 'xander' %}
+<div class="editorial-project-hero">
+ <img src="{{ film.poster | relative_url }}" alt="{{ film.title | escape }}">
+ <div class="editorial-film-top"><a href="{{ '/films/' | relative_url }}">All films</a><span>{{ film.category }} / {{ film.year }}</span></div>
+ <div class="editorial-film-copy"><span class="editorial-kicker">HYPOXIC STUDIO / {{ film.client }}</span><h1>{{ film.title }}</h1>
+ <p>{{ film.description }}</p>
+ <div class="editorial-tags"><span>{{ film.category }}</span><span>{{ film.location }}</span><span>{{ film.duration }}</span></div>
+ <button class="editorial-watch" id="openVideo" type="button" data-video="{{ film.youtube | escape }}">Watch the film</button>
+ </div>
+</div>
+{% else %}
 
     <!-- =========================
          HEADER
@@ -69,6 +81,8 @@ layout: default
 
 </div>
 
+
+{% endif %}
 
 <!-- =====================================
      VIDEO POPUP

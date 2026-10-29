@@ -1,0 +1,15 @@
+# Add clients here; the About page grid expands automatically.
+- name: The North Face
+  logo: /assets/css/images/clients/thenorthface.png
+- name: Scarpa
+  logo: /assets/css/images/clients/scarpa.jpeg
+  invert: true
+- name: National Geographic
+  logo: /assets/css/images/clients/natgeo.jpg
+  invert: true
+- name: DVG
+  logo: /assets/css/images/clients/DVG.png
+- name: V8 Tech
+  logo: /assets/css/images/clients/V8.png
+- name: Langtang
+  logo: /assets/css/images/clients/langtang.png

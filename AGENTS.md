@@ -1,34 +1,57 @@
 
-# Hypoxic Studio — Codex Working Rules
+# HYPOXIC.STUDIO — CODEX PROJECT INSTRUCTIONS
 
 ## Project
-Jekyll website for Hypoxic Studio.
+- Website: hypoxic.studio
+- Framework: Jekyll 4.4
+- Hosting: GitHub Pages via GitHub Actions
+- Development: macOS, VS Code
+- Design: Minimal, cinematic, editorial, responsive
 
-## Working scope
-- Focus on the page or section requested.
-- Read only the files needed for the task.
-- Do not scan the entire repository by default.
-- Prefer files explicitly named or opened by the user.
-- Access additional files only when necessary.
-- Do not read unrelated assets, pages, or Git history.
+## Efficiency Rules
+1. Work only on files relevant to the requested task.
+2. Do not scan the entire repository by default.
+3. Start with the file paths explicitly provided.
+4. Inspect additional files only when needed for dependencies.
+5. Avoid reading large media, images, videos, or generated files.
+6. Do not repeatedly read files already understood in this task.
+7. Keep responses short and focused.
+8. Prefer minimal edits over complete rewrites.
 
-## Editing
-- Make minimal, targeted changes.
-- Preserve existing design and functionality.
-- Never overwrite unrelated or uncommitted changes.
-- Do not refactor unrelated code.
-- Avoid installing dependencies without approval.
+## File Restrictions
+- Never modify files unrelated to the current task.
+- Do not inspect _site/, .git/, vendor/, or node_modules/.
+- Avoid Gemfile, Gemfile.lock, and _config.yml unless required.
+- Do not replace functioning sections unnecessarily.
+- Preserve existing design and content unless asked to change them.
 
-## Efficiency
-- Use focused searches rather than recursive scans.
-- Avoid repeatedly reading unchanged files.
-- Keep explanations short.
-- Run only relevant validation.
-- Do not repeatedly build the site without a reason.
+## Development Rules
+- Preserve responsive layouts.
+- Reuse existing CSS classes and components.
+- Avoid unnecessary dependencies and libraries.
+- Prefer small, readable, maintainable changes.
+- Do not change the website's overall design without approval.
 
-## Current focus
-Homepage development.
+## Workflow
+1. Identify the smallest relevant file set.
+2. Make the requested change.
+3. Check the modified code for obvious errors.
+4. Run a build only when the change warrants it.
+5. Report the files modified and a short summary.
 
-## Approval
-If a task requires changes outside the requested
-scope, explain why and ask first.
+## Git & Deployment
+- Never push changes automatically.
+- Never create commits without approval.
+- Never modify GitHub Actions without permission.
+- Never alter deployment settings unless requested.
+
+## Task Scope
+When working on the homepage:
+- Prioritize homepage templates and related styles.
+- Do not inspect Films, About, or Contact pages unless required.
+- Avoid modifying global layouts without a clear reason.
+
+## Communication
+- Be concise.
+- Do not provide lengthy explanations unless requested.
+- Ask before making substantial changes outside the task.

@@ -1,0 +1,47 @@
+---
+layout: default
+title: Studio Rentals
+permalink: /studio/
+description: Explore Hypoxic Studio rental spaces, proposed NPR packages and production services.
+---
+<link rel="stylesheet" href="{{ '/assets/css/studio.css' | relative_url }}">
+<div class="studio-space-page">
+ <section class="space-intro"><p class="space-label">/ Hypoxic Studio</p><h1>Studio Rentals</h1><div class="space-intro-bottom"><p>Spaces for filming, photography, podcasts, and conversations.</p><p class="rental-intro-aside">Explore three spaces with flexible packages for your next production.</p></div></section>
+ <div class="rental-showcase">
+ <div class="rental-tabs" aria-label="Choose a studio">{% for space in site.data.studio.spaces %}<button type="button" id="tab-{{ space.id }}" data-studio-tab="{{ space.id }}">{{ space.name }}</button>{% endfor %}</div>
+ {% for space in site.data.studio.spaces %}
+ <section class="rental-studio" id="{{ space.id }}" aria-labelledby="{{ space.id }}-title">
+ <div class="rental-visuals">
+  <img class="rental-feature" src="{{ space.image | relative_url }}" alt="{{ space.name }} concept image" loading="lazy">
+  <div class="rental-thumbnails" aria-label="{{ space.name }} gallery">
+   <button type="button" data-gallery-src="{{ space.image | relative_url }}" data-gallery-alt="{{ space.name }} concept image" aria-pressed="true"><img src="{{ space.image | relative_url }}" alt="Main studio view" loading="lazy"></button>
+   {% for photo in space.gallery %}<button type="button" data-gallery-src="{{ photo.image | relative_url }}" data-gallery-alt="{{ photo.alt | escape }}" aria-pressed="false"><img src="{{ photo.image | relative_url }}" alt="{{ photo.alt | escape }}" loading="lazy"></button>{% endfor %}
+  </div>
+  <p class="space-booking-note">Illustrative studio visual. Final setup and equipment subject to confirmation.</p>
+ </div>
+ <div class="rental-details">
+  <p class="space-label">{{ forloop.index | prepend: '0' }}</p><h2 id="{{ space.id }}-title">{{ space.name }}</h2>
+  <p class="rental-description">{{ space.description }}</p>
+  <div class="rental-accordions">
+   <details><summary>Equipment included · Studio + Lighting</summary><ul>{% for item in space.included %}<li>{{ item }}</li>{% endfor %}</ul></details>
+   <details><summary>Additional production equipment</summary><p>Full Production includes Studio + Lighting plus:</p><ul>{% for item in space.additional %}<li>{{ item }}</li>{% endfor %}</ul></details>
+  </div>
+  <div class="space-rate-wrap"><table class="space-rates"><caption>Pricing ({{ site.data.studio.currency }}) · Proposed rates</caption><thead><tr><th scope="col">Duration</th><th scope="col">Studio + Lighting</th><th scope="col">Full Production</th></tr></thead><tbody>{% for rate in space.rates %}<tr><th scope="row">{{ rate.duration }}</th><td>{{ rate.studio }}</td><td>{{ rate.production }}</td></tr>{% endfor %}</tbody></table></div>
+  <p class="space-booking-note">Rates and inventory must be confirmed before booking.</p>
+  <a class="space-button" href="#studio-booking" data-book-space="{{ space.name | escape }}">Inquire About This Studio</a>
+ </div>
+ </section>
+ {% endfor %}
+ </div>
+ <section aria-labelledby="rental-services"><div class="space-section-title"><h2 id="rental-services">/ Optional services</h2><span>04</span></div><ul class="rental-service-list">{% for service in site.data.studio.services %}<li><span>{{ service }}</span><small>Available on request</small></li>{% endfor %}</ul></section>
+ <section id="studio-booking" aria-labelledby="booking-title"><div class="space-section-title"><h2 id="booking-title">/ Plan your session</h2><span>05</span></div><div class="space-booking-layout"><div><h3>Make space<br>for your story.</h3><p>Choose a space and tell us when you’d like to visit. We’ll confirm availability, rates, session hours and equipment with you.</p><p class="space-booking-note">This is a booking enquiry, not a confirmed reservation. The form opens your email app with the details ready to send.</p><a href="mailto:{{ site.data.studio.email }}">{{ site.data.studio.email }}</a></div>
+ <form id="space-booking-form" data-email="{{ site.data.studio.email | escape }}">
+ <div class="space-form-grid"><label>Your name<input name="name" autocomplete="name" required maxlength="120"></label><label>Email<input name="email" type="email" autocomplete="email" required></label>
+ <label>Studio space<select name="space" id="booking-space" required>{% for space in site.data.studio.spaces %}<option>{{ space.name }}</option>{% endfor %}</select></label><label>Booking duration<select name="duration" required><option>Hourly</option><option>Half Day (4h)</option><option>Full Day (8h)</option></select></label>
+ <label>Package<select name="package" required><option>Studio + Lighting</option><option>Full Production</option></select></label>
+ <label>Preferred date<input name="date" type="date" required></label><label>Preferred start time (Nepal)<input name="time" type="time" required></label><label id="booking-hours-label">Number of hours<input name="hours" type="number" min="1" max="24" step="1" value="1" required></label></div>
+ <fieldset class="rental-addons"><legend>Optional services</legend>{% for service in site.data.studio.services %}<label><input type="checkbox" name="addons" value="{{ service | escape }}">{{ service }}</label>{% endfor %}</fieldset>
+ <label>About your session<textarea name="message" rows="4" maxlength="3000" placeholder="Your project, number of people, equipment needs and any questions"></textarea></label><button class="space-button" type="submit">Prepare booking email</button><p id="space-booking-status" role="status"></p><noscript><p>Please email your chosen space, date and duration to {{ site.data.studio.email }}.</p></noscript>
+ </form></div></section>
+</div>
+<script src="{{ '/assets/js/studio-booking.js' | relative_url }}" defer></script>
