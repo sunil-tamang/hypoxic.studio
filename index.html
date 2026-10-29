@@ -96,24 +96,38 @@ description: Hypoxic is an independent film studio creating documentary films an
     </div>
     <div class="hs-capabilities-meta"><span>HYPOXIC STUDIO / CAPABILITIES</span><span>FROM CONCEPT TO FINAL CUT</span></div>
   </section>
-  <!-- Interactive Why us contact-sheet design. -->
-  <section class="hs-contact-story" id="why-us-story" aria-labelledby="hs-contact-title">
+  <section class="hs-field-notes" id="why-us-field-notes" aria-labelledby="hs-field-title">
     <div class="hs-section-label"><span>/ Why us</span><span>(04)</span></div>
-    <p class="hs-contact-instruction">Choose a frame. Explore our approach.</p>
-    <div class="hs-contact-frames" aria-label="Three perspectives from the studio">
-      {% for story in site.data.why_us %}
-      <figure class="hs-contact-frame{% if forloop.index == 2 %} hs-contact-feature{% endif %}"><figcaption>{{ forloop.index | prepend: '0' }} / {{ story.label | upcase }}</figcaption><button class="hs-contact-image" type="button" data-frame="{{ forloop.index0 }}" data-label="{{ story.label | escape }}" data-title="{{ story.title | escape }}" data-description="{{ story.description | escape }}" aria-label="{{ story.label | escape }}" aria-pressed="{% if forloop.index == 2 %}true{% else %}false{% endif %}" aria-controls="hs-contact-detail"><img src="{{ story.image | relative_url }}" alt="{{ story.alt | escape }}" loading="lazy" decoding="async"></button></figure>
-      {% endfor %}
+    <div class="hs-field-intro">
+      <h2 id="hs-field-title">You work with us because<br>we can go where others can’t.</h2>
+      <p>We’re filmmakers, mountain guides and field operators. We understand the real conditions — high altitude, remote locations, changing weather and limited time. We don’t just capture the surface, we live the environment, earn the trust and bring back honest, cinematic stories.</p>
     </div>
-    <div class="hs-contact-timeline"><label class="hs-contact-scrub-label" for="hs-contact-scrub">Explore the story</label><input id="hs-contact-scrub" type="range" min="0" max="2" step="1" value="1" aria-valuetext="In the field"><span aria-hidden="true"></span></div>
-    <div class="hs-contact-detail" id="hs-contact-detail" aria-live="polite" aria-atomic="true"><span>02 / IN THE FIELD</span><h3>Wherever the story takes us.</h3><p>From remote journeys to everyday outdoor pursuits, we adapt to the place, the people and the story.</p></div>
-    <div class="hs-contact-statement"><div><h2 id="hs-contact-title">The difference is<br>what we <em>notice.</em></h2><p>We’re an expedition and adventure filmmaking studio.<br>From remote journeys to everyday outdoor pursuits, we bring the experience—and the people behind it—to the screen.</p></div></div>
-    <div class="hs-contact-principles">
-      <div><h3>01 / Plan together</h3><p>A shared brief. A considered plan.</p></div>
-      <div><h3>02 / Adapt in the field</h3><p>Different environments. The same care.</p></div>
-      <div><h3>03 / Craft the story</h3><p>Care from first frame to final cut.</p></div>
+    <div class="hs-field-columns">
+      <article>
+        <div class="hs-field-marker" aria-hidden="true"><span>01</span><div></div></div>
+        <p class="hs-field-kicker">01 / Access</p><h3>Access to<br>the uncommon.</h3>
+        <p>We operate in some of the world’s most remote and extreme environments. Our team is trained, experienced and self-sufficient, allowing your story to be filmed where others simply can’t go.</p>
+        <ul><li>High-altitude experience</li><li>Field logistics</li><li>Safety-first mindset</li></ul>
+      </article>
+      <article>
+        <div class="hs-field-marker" aria-hidden="true"><span>02</span><div></div></div>
+        <p class="hs-field-kicker">02 / Authenticity</p><h3>Stories grounded<br>in real people.</h3>
+        <p>We work closely with local communities, guides and athletes, building genuine relationships and capturing real moments as they happen — not staged content.</p>
+        <ul><li>Cultural understanding</li><li>Long-term local network</li><li>Human-centered storytelling</li></ul>
+      </article>
+      <article>
+        <div class="hs-field-marker" aria-hidden="true"><span>03</span><div></div><small>Field notes</small></div>
+        <p class="hs-field-kicker">03 / Complete support</p><h3>From field to<br>final frame.</h3>
+        <p>We handle the full process — from concept and planning to field production, post-production and delivery — with a deep understanding of the creative and practical sides of expedition filmmaking.</p>
+        <ul><li>Planning &amp; research</li><li>Filming &amp; post-production</li><li>Distribution &amp; deliverables</li></ul>
+      </article>
     </div>
-    <div class="hs-contact-footer"><span>HYPOXIC STUDIO / FIELD NOTES</span><a href="{{ '/about/' | relative_url }}">Meet the studio</a></div>
+    <div class="hs-field-benefits"><p class="hs-field-kicker">/ What this means for you</p><ol>
+      <li><span>01</span><p>Unique and authentic<br>footage others can’t access.</p></li>
+      <li><span>02</span><p>A team that understands<br>the environment and the risks.</p></li>
+      <li><span>03</span><p>Real stories with depth<br>and cultural context.</p></li>
+      <li><span>04</span><p>A reliable and experienced<br>partner from start to finish.</p></li>
+    </ol></div>
   </section>
-  <!-- End new Why us design. -->
+
 </main>
