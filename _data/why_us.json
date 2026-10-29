@@ -1,0 +1,44 @@
+[
+  {
+    "image": "/assets/css/images/stills/banner20.jpg",
+    "alt": "Together in the field",
+    "label": "Shared vision",
+    "title": "Start with a shared vision.",
+    "description": "We work with you to define the story and build a considered plan."
+  },
+  {
+    "image": "/assets/css/images/services/rock/hero.jpeg",
+    "alt": "Climber on a rock face above forest",
+    "label": "Beyond the summit",
+    "title": "Adventure takes many forms.",
+    "description": "Rock, trail and remote journeys. We follow the experience wherever it unfolds."
+  },
+  {
+    "image": "/assets/css/images/stills/banner19.jpg",
+    "alt": "Climbers together on a mountain ridge",
+    "label": "In the field",
+    "title": "Adapt to the unexpected.",
+    "description": "We shape each shoot around the terrain, the activity and the people."
+  },
+  {
+    "image": "/assets/css/images/services/rock/14.jpeg",
+    "alt": "Climber beneath a rock overhang",
+    "label": "A different perspective",
+    "title": "Get closer to the experience.",
+    "description": "An understanding of movement helps us find a point of view that feels present."
+  },
+  {
+    "image": "/assets/css/images/stills/banner18.jpg",
+    "alt": "People gathered inside a shelter",
+    "label": "Human stories",
+    "title": "Make room for the people.",
+    "description": "The moments between the action give a story its character and connection."
+  },
+  {
+    "image": "/assets/css/images/services/rock/12.jpeg",
+    "alt": "Close detail of chalk-covered hands",
+    "label": "The details",
+    "title": "Notice what others pass by.",
+    "description": "Texture, gesture, sound and rhythm. Small details bring the final film to life."
+  }
+]

@@ -1,0 +1,83 @@
+/* Shared light palette. Photography keeps its natural colours. */
+:root { --color-bg:#fff; --color-text:#151515; }
+html, body, body.hs-home { background:#fff; color:#151515; color-scheme:light; }
+.hs-home, .hs-site-chrome {
+ color:#151515;
+ .hs-nav, .hs-nav.is-open { background:#ededeb; color:#151515; }
+ .hs-nav .hs-cta { background:#111; color:#fff; }
+ .hs-nav .hs-cta:hover { background:#333; }
+ .hs-menu-toggle { background:#fff; color:#111; }
+ .hs-menu-toggle:hover { background:#ddd; }
+ .hs-backdrop { background:rgba(0,0,0,.25); }
+ .hs-quick-links a:hover, .hs-quick-links a[aria-current], .hs-menu-social a:hover,
+ .hs-about-headline, .hs-about-word:hover, .hs-about-word:focus-visible,
+ .hs-work-heading h2, .hs-work-copy h3, .hs-work-copy a, .hs-stats-group strong,
+ .hs-studio-note > span, .hs-studio-note strong { color:#151515; }
+ .hs-clock, .hs-intro p, .hs-studio-note, .hs-quick-links, .hs-menu-links small,
+ .hs-menu-bottom p, .hs-menu-social, .hs-about-copy, .hs-about-statement,
+ .hs-section-label span:last-child, .hs-stats-group li, .hs-work-eyebrow,
+ .hs-work-heading p, .hs-work-frame figcaption, .hs-capabilities-heading > p,
+ .hs-capabilities-meta, .hs-contact-frame figcaption, .hs-contact-statement p,
+ .hs-contact-principles p, .hs-contact-footer > span, .hs-contact-instruction,
+ .hs-contact-detail > span, .hs-contact-detail p { color:#666; }
+ .hs-footer { color:#151515; }
+ .hs-footer-location, .hs-footer-bottom { color:#666; }
+ .hs-footer-project { background:#111; color:white; border-color:#111; }
+ .hs-footer-films { background:#f3f3f1; color:#333; border-color:#ddd; }
+ .hs-footer-project:hover { background:#333; color:white; }
+ .hs-footer-films:hover { background:#e7e7e4; color:#111; }
+ .hs-work-eyebrow, .hs-capabilities, .hs-capabilities-meta, .hs-contact-detail,
+ .hs-contact-principles, .hs-contact-footer, .hs-footer-bottom { border-color:#ddd; }
+ button.hs-contact-image { border-color:#ddd; }
+ .hs-contact-image[aria-pressed="true"] { border-color:#333; }
+ .hs-contact-timeline span { background:#222; }
+ .hs-logo-marquee { mix-blend-mode:multiply; }
+ .hs-logo img { filter:brightness(0); opacity:.4; }
+ .hs-logo-scarpa img, .hs-logo-natgeo img { filter:grayscale(1) invert(1); mix-blend-mode:multiply; }
+ .hs-logo-langtang img { filter:grayscale(1); mix-blend-mode:multiply; }
+ .hs-skip { background:#fff; color:#111; }
+ a:focus-visible, button:focus-visible, .hs-stats-marquee:focus-visible { outline-color:#333; }
+}
+.hs-chrome-footer, .hs-chrome-footer .hs-footer { background:#fff; }
+/* Retire the rounded contour trial while the palette changes. */
+body.hs-home .hs-contact-story::before, body.hs-home .hs-footer::before { display:none; }
+
+/* Existing inner pages retain their typefaces and composition. */
+.hs-page-content { color:#151515; background:#fff; }
+.hs-page-content :is(h1,h2,h3,h4,p,label,legend,blockquote,li,dt,dd) { color:inherit; }
+.hs-page-content :is(.film-title,.film-description,.film-credits,.film-meta,
+ .summit-story-title,.summit-story-intro,.summit-values-title,.summit-experience-title,
+ .summit-faq-title,.summit-faq-question,.service-stat span,.guide-service-trip-value,
+ .guide-service-included-title,.guide-service-check-icon) { color:#151515; }
+.hs-page-content :is(.service-split-block,.service-related-grid a,.guide-service-trip-item,
+ .guide-service-check,.guide-service-check-icon,.guide-service-booking) { background:#f3f3f1; color:#151515; border-color:#ddd; }
+.hs-page-content :is(input,textarea,select) { background:#f7f7f5; color:#151515; border-color:#bbb; }
+.hs-page-content :is(input,textarea)::placeholder { color:#777; }
+.hs-page-content :is(.about-hero,.team-banner,.summit-hero,.film-overlay,.still figcaption) { color:#fff; }
+.hs-page-content :is(.about-hero,.team-banner,.summit-hero,.film-overlay,.still figcaption) :is(h1,h2,h3,p,a,span,strong) { color:inherit; }
+
+/* Legacy page containers had explicit dark-theme colours. */
+.hs-page-content :is(.films-page,.stills-page,.contact-page,.film-project,.team-page) { background:#fff; color:#151515; }
+.hs-page-content .view-switch button.active { color:#111; }
+.hs-page-content .contact-form button { background:#111; color:#fff; border:1px solid #111; }
+.hs-page-content .contact-form button:hover { background:#333; }
+.hs-page-content :is(.film-list-title,.meta-item strong,.film-credits strong) { color:#151515; }
+.hs-page-content .film-card { color:#fff; }
+.hs-page-content .film-card :is(h2,p,span) { color:#fff; }
+.hs-page-content :is(.film-list-item,.film-credits,.summit-value-item,.summit-timeline,.summit-faq-item) { border-color:#ddd; }
+.hs-page-content :is(.summit-story-divider,.summit-timeline-item::before,.service-stat::before) { background:#222; }
+
+/* Shared, low-contrast terrain texture; sits behind all page content. */
+body, body.hs-home {
+ background-color:#fff;
+ background-image:url('images/studio-contours.svg');
+ background-size:1440px 1080px;
+ background-repeat:repeat;
+}
+.hs-page-content, .hs-chrome-footer, .hs-chrome-footer .hs-footer,
+.hs-site-chrome, .hs-page-content :is(.films-page,.stills-page,.contact-page,.film-project,.team-page) {
+ background-color:transparent;
+}
+/* Use one continuous background instead of stacking local contour overlays. */
+body.hs-home .hs-contact-story::before, body.hs-home .hs-footer::before { display:none; }
+@media(max-width:700px) { body,body.hs-home { background-size:1000px 750px; } }

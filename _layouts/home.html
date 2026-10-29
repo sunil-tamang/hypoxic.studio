@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }}</title>
+  <meta name="description" content="{{ page.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/css/images/films/xander/gallery-3.jpg' | absolute_url }}">
+  <link rel="icon" href="{{ '/favicon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+</head>
+<body class="hs-home">
+  {% include site-header.html %}
+  <div class="hs-shell">{{ content }}{% include site-footer.html %}</div>
+  <script src="{{ '/assets/js/work-media.js' | relative_url }}?v=2" defer></script>
+  <script src="{{ '/assets/js/capabilities.js' | relative_url }}?v=2" defer></script>
+  <script src="{{ '/assets/js/contact-story.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/navigation.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/home.js' | relative_url }}" defer></script>
+</body>
+</html>

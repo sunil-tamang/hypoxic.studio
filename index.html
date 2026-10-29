@@ -1,127 +1,114 @@
 ---
-layout: default
-title: "HYPOXIC.STUDIO — Coming Soon"
-coming_soon: true
-slick_css: 'No'
-slick_js: 'No'
-author_name: "HYPOXIC.STUDIO"
-custom_bg: "bg/banner.jpg"
-tags: "Film Studio, Expedition Filmmaking, Cinematography, Himalayan Stories"
-description: "HYPOXIC.STUDIO — An independent film studio based in Nepal. Stories from thin air."
+layout: home
+title: HYPOXIC.STUDIO — Stories from thin air
+description: Hypoxic is an independent film studio creating documentary films and cinematic stories from the Himalaya and beyond.
 ---
-
-<main class="hypoxic-landing">
-
-  <header class="hypoxic-header">
-    <a href="{{ '/' | relative_url }}"
-       class="hypoxic-logo">
-      H/S<span>®</span>
-    </a>
-
-    <span class="header-info">
-      INDEPENDENT FILM STUDIO — NEPAL
-    </span>
-  </header>
-
-  <section class="hypoxic-hero">
-
-    <div class="hero-meta">
-      <span>[ 001 — INTRODUCTION ]</span>
-      <span>EST. 2026 / NEPAL</span>
-    </div>
-
-    <h1 class="hero-title">
-      HYPOXIC<span>.</span><br>
-      STUDIO
-    </h1>
-
-    <div class="hero-content">
-
-      <div class="hero-left">
-        <p class="hero-label">
-          FILM / EXPEDITION / STORYTELLING
-        </p>
-
-        <h2>
-          STORIES<br>
-          FROM<br>
-          THIN AIR.
-        </h2>
-
-        <p class="hero-description">
-          An independent film studio exploring
-          the intersection of adventure,
-          altitude, and human stories.
-        </p>
-
-        <div class="coming-soon">
-          <span class="status-dot"></span>
-          WEBSITE COMING SOON
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="image-frame">
-          <img
-            src="{{ '/assets/css/images/expedition.jpg' | relative_url }}"
-            alt="Himalayan expedition"
-            loading="eager">
-
-          <span class="image-label">
-            H/S — VISUAL ARCHIVE 001
-          </span>
-        </div>
-
-        <div class="image-caption">
-          <span>FIG. 01 — THE HIMALAYAS</span>
-          <span>NEPAL / 2026</span>
-        </div>
-      </div>
-
-    </div>
-
+<main id="main-content">
+  <section class="hs-intro" aria-labelledby="hs-title">
+    <h1 id="hs-title"><span>Hypoxic</span><sup>®</sup><span class="hs-sr-only"> Studio</span></h1>
+    <p>Hypoxic is an independent film studio creating documentary films and cinematic stories from the Himalaya and beyond.</p>
   </section>
-
-  <footer class="hypoxic-footer">
-    <span>© 2026 HYPOXIC.STUDIO</span>
-
-    <div class="footer-links">
-      <a href="mailto:hello@hypoxicstudio.com">
-        EMAIL ↗
-      </a>
-
-      <a href="https://instagram.com/"
-         target="_blank"
-         rel="noopener noreferrer">
-        INSTAGRAM ↗
-      </a>
+  <div class="hs-proof">
+    <div class="hs-logo-marquee" aria-label="Brand logos from our studio archive">
+      <div class="hs-logo-track">
+        {% for repeat in (1..2) %}
+        <div class="hs-logo-group" {% if repeat == 2 %}aria-hidden="true"{% endif %}>
+          <div class="hs-logo hs-logo-north"><img src="{{ '/assets/css/images/clients/thenorthface.png' | relative_url }}" alt="{% if repeat == 1 %}The North Face{% endif %}"></div>
+          <div class="hs-logo hs-logo-scarpa"><img src="{{ '/assets/css/images/clients/scarpa.jpeg' | relative_url }}" alt="{% if repeat == 1 %}Scarpa{% endif %}"></div>
+          <div class="hs-logo hs-logo-natgeo"><img src="{{ '/assets/css/images/clients/natgeo.jpg' | relative_url }}" alt="{% if repeat == 1 %}National Geographic{% endif %}"></div>
+          <div class="hs-logo hs-logo-dvg"><img src="{{ '/assets/css/images/clients/DVG.png' | relative_url }}" alt="{% if repeat == 1 %}DVG{% endif %}"></div>
+          <div class="hs-logo hs-logo-v8"><img src="{{ '/assets/css/images/clients/V8.png' | relative_url }}" alt="{% if repeat == 1 %}V8 Tech{% endif %}"></div>
+          <div class="hs-logo hs-logo-langtang"><img src="{{ '/assets/css/images/clients/langtang.png' | relative_url }}" alt="{% if repeat == 1 %}Langtang{% endif %}"></div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
+    <div class="hs-studio-note"><span>Stories from thin air.</span><p>Based in <strong>Nepal.</strong> Working worldwide.</p></div>
+  </div>
+  <div class="hs-banner">
+    <video class="hs-banner-video" autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/css/video/banner4-poster.png' | relative_url }}" aria-label="Himalayan expedition film montage">
+      <source src="{{ '/assets/css/video/banner4.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <button class="hs-motion-toggle" type="button" aria-label="Pause animations"><span aria-hidden="true">Ⅱ</span></button>
+  </div>
 
-    <span>CRAFTED AT ALTITUDE.</span>
-  </footer>
-
+  <section class="hs-about" id="about-studio" aria-labelledby="hs-about-title">
+    <div class="hs-section-label"><span>/ About us</span><span>(01)</span></div>
+    <!-- <h2 class="hs-about-statement hs-about-headline" id="hs-about-title">
+      {% assign studio_heading = 'Driven by curiosity. Drawn to the unknown.' | split: ' ' %}
+      {% for word in studio_heading %}<a class="hs-about-word" href="{{ '/films/' | relative_url }}">{{ word }}</a> {% endfor %}
+    </h2> -->
+    <p class="hs-about-copy">
+      {% assign studio_words = 'Hypoxic is an independent film studio based in Nepal. We tell stories of adventure, exploration, and the people who push beyond the familiar. Through honest storytelling and striking imagery, we bring extraordinary experiences and overlooked perspectives to life.' | split: ' ' %}
+      {% for word in studio_words %}<a class="hs-about-word" href="{{ '/films/' | relative_url }}">{{ word }}</a> {% endfor %}
+    </p>
+    <div class="hs-stats-marquee" role="region" aria-label="Studio facts. Focus to pause scrolling." tabindex="0">
+      <div class="hs-stats-track">
+        {% for repeat in (1..4) %}
+        <ul class="hs-stats-group" {% if repeat != 1 %}aria-hidden="true"{% endif %}>
+          <li><span class="hs-stats-slash" aria-hidden="true">/</span><span><strong>{{ site.data.films | size }}</strong> Featured films</span></li>
+          <li><span class="hs-stats-slash" aria-hidden="true">/</span><span><strong>{{ site.data.photos | size }}</strong> Photographs in our archive</span></li>
+          <li><span class="hs-stats-slash" aria-hidden="true">/</span><span><strong>Nepal</strong> Studio base</span></li>
+          <li><span class="hs-stats-slash" aria-hidden="true">/</span><span><strong>Worldwide</strong> Availability</span></li>
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="hs-work" id="selected-films" aria-labelledby="hs-work-title">
+    <div class="hs-work-eyebrow"><span>HYPOXIC® STUDIO</span><span>02 / FILM &amp; PHOTOGRAPHY</span></div>
+    <div class="hs-work-heading"><h2 id="hs-work-title">/ Our work</h2><p>From the first step into the unknown to the final frame.</p></div>
+    <div class="hs-work-spread">
+      <figure class="hs-work-frame"><a class="hs-work-photo" href="{{ '/films/' | relative_url }}" aria-label="Explore our work: In the field"><img src="{{ '/assets/css/images/services/rock/hero2.jpg' | relative_url }}" alt="A climber on a sweeping rock wall above a green valley" loading="lazy" decoding="async"></a><figcaption><span>In the field</span><span>01</span></figcaption></figure>
+      <div class="hs-work-side"><figure class="hs-work-frame"><a class="hs-work-photo" href="{{ '/films/' | relative_url }}" aria-label="Explore our work: A different perspective"><video class="hs-work-video" muted loop playsinline preload="metadata" poster="{{ '/assets/css/video/banner2-poster.png' | relative_url }}" aria-label="Expedition climbers ascending a snowy slope"><source src="{{ '/assets/css/video/banner2.mp4' | relative_url }}" type="video/mp4"></video></a><figcaption><span>A different perspective</span><span>02</span></figcaption></figure><div class="hs-work-copy"><h3>Real places.<br>Stories that stay.</h3><a href="{{ '/films/' | relative_url }}">Explore the work</a></div></div>
+    </div>
+    <div class="hs-work-more"><figure class="hs-work-frame"><a class="hs-work-photo" href="{{ '/films/' | relative_url }}" aria-label="Explore our work: People along the way"><img src="{{ '/assets/css/images/stills/banner02.jpg' | relative_url }}" alt="An environmental portrait of a climber resting outdoors" loading="lazy" decoding="async"></a><figcaption><span>People along the way</span><span>03</span></figcaption></figure><figure class="hs-work-frame"><a class="hs-work-photo" href="{{ '/films/' | relative_url }}" aria-label="Explore our work: Beyond the familiar"><video class="hs-work-video" muted loop playsinline preload="metadata" poster="{{ '/assets/css/video/banner5-poster.png' | relative_url }}" aria-label="An expedition team moving through blowing snow"><source src="{{ '/assets/css/video/banner5.mp4' | relative_url }}" type="video/mp4"></video></a><figcaption><span>Beyond the familiar</span><span>04</span></figcaption></figure></div>
+  </section>
+  <section class="hs-capabilities" id="capabilities" aria-labelledby="hs-capabilities-title">
+    <div class="hs-section-label"><span>/ Our capabilities</span><span>(03)</span></div>
+    <div class="hs-capabilities-heading"><h2 id="hs-capabilities-title">Ideas into images.</h2><p>Creative thinking. Collective craft.<br>From concept to final cut.</p></div>
+    <div class="hs-capabilities-panels">
+      <article class="hs-capability">
+        <img src="{{ '/assets/css/images/stills/creative.jpg' | relative_url }}" alt="A group gathered together inside a shelter" loading="lazy" decoding="async">
+        <span class="hs-capability-number" aria-hidden="true">01</span>
+        <div class="hs-capability-copy"><h3><button class="hs-capability-select" type="button" aria-expanded="false" aria-controls="capability-detail-0">Creative</button></h3><div class="hs-capability-detail" id="capability-detail-0" hidden><p>Concepts, research and visual direction. A clear starting point for every story.</p></div></div>
+      </article>
+      <article class="hs-capability is-active">
+        <video muted loop playsinline preload="metadata" poster="{{ '/assets/css/video/banner3-poster.png' | relative_url }}" aria-label="Expedition camp on a ridge above the clouds"><source src="{{ '/assets/css/video/banner3.mp4' | relative_url }}" type="video/mp4"></video>
+        <span class="hs-capability-number" aria-hidden="true">02</span>
+        <div class="hs-capability-copy"><h3><button class="hs-capability-select" type="button" aria-expanded="true" aria-controls="capability-detail-1">Production</button></h3><div class="hs-capability-detail" id="capability-detail-1"  ><p>A shared vision, brought to life. Adventure shoots, remote locations and crews that adapt to the field.</p></div></div>
+      </article>
+      <article class="hs-capability">
+        <img src="{{ '/assets/css/images/stills/studio.jpeg' | relative_url }}" alt="A finished landscape photograph of mountains and clouds" loading="lazy" decoding="async">
+        <span class="hs-capability-number" aria-hidden="true">03</span>
+        <div class="hs-capability-copy"><h3><button class="hs-capability-select" type="button" aria-expanded="false" aria-controls="capability-detail-2">Post</button></h3><div class="hs-capability-detail" id="capability-detail-2" hidden><p>Editing, colour and sound. Every detail shaped into a cohesive final film.</p></div></div>
+      </article>
+      <article class="hs-capability">
+        <img src="{{ '/assets/css/images/stills/boop.jpg' | relative_url }}" alt="A close portrait of a smiling man outdoors" loading="lazy" decoding="async">
+        <span class="hs-capability-number" aria-hidden="true">04</span>
+        <div class="hs-capability-copy"><h3><button class="hs-capability-select" type="button" aria-expanded="false" aria-controls="capability-detail-3">Photography</button></h3><div class="hs-capability-detail" id="capability-detail-3" hidden><p>Considered images of people, places and ideas. Still frames with a story to tell.</p></div></div>
+      </article>
+    </div>
+    <div class="hs-capabilities-meta"><span>HYPOXIC STUDIO / CAPABILITIES</span><span>FROM CONCEPT TO FINAL CUT</span></div>
+  </section>
+  <!-- Interactive Why us contact-sheet design. -->
+  <section class="hs-contact-story" id="why-us-story" aria-labelledby="hs-contact-title">
+    <div class="hs-section-label"><span>/ Why us</span><span>(04)</span></div>
+    <p class="hs-contact-instruction">Choose a frame. Explore our approach.</p>
+    <div class="hs-contact-frames">
+      <figure class="hs-contact-frame"><figcaption>01 / TOGETHER</figcaption><button class="hs-contact-image" type="button" data-frame="0" aria-label="Collaboration" aria-pressed="false" aria-controls="hs-contact-detail"><img src="{{ '/assets/css/images/stills/banner20.jpg' | relative_url }}" alt="An expedition group together in the field" loading="lazy" decoding="async"><span class="hs-contact-insight">Different skills. One shared vision.</span></button></figure>
+      <figure class="hs-contact-frame hs-contact-feature"><figcaption>02 / IN THE FIELD</figcaption><button class="hs-contact-image" type="button" data-frame="1" aria-label="Adventure in the field" aria-pressed="true" aria-controls="hs-contact-detail"><img src="{{ '/assets/css/images/stills/banner19.jpg' | relative_url }}" alt="Climbers together on a mountain ridge" loading="lazy" decoding="async"><span class="hs-contact-insight">Stay open to the unexpected.</span></button></figure>
+      <figure class="hs-contact-frame"><figcaption>03 / THE FINAL FRAME</figcaption><button class="hs-contact-image" type="button" data-frame="2" aria-label="The final film" aria-pressed="false" aria-controls="hs-contact-detail"><img src="{{ '/assets/css/images/services/rock/12.jpeg' | relative_url }}" alt="A close detail of a climber’s chalk-covered hands" loading="lazy" decoding="async"><span class="hs-contact-insight">Care in the details.</span></button></figure>
+    </div>
+    <div class="hs-contact-timeline"><label class="hs-contact-scrub-label" for="hs-contact-scrub">Explore the story</label><input id="hs-contact-scrub" type="range" min="0" max="2" step="1" value="1" aria-valuetext="Adventure in the field"><span aria-hidden="true"></span></div>
+    <div class="hs-contact-detail" id="hs-contact-detail" aria-live="polite" aria-atomic="true"><span>02 / ADVENTURE IN THE FIELD</span><h3>Wherever the story takes us.</h3><p>Expeditions, outdoor pursuits and the people behind them. We shape each shoot around the terrain, the activity and the story.</p></div>
+    <div class="hs-contact-statement"><div><h2 id="hs-contact-title">The difference is<br>what we <em>notice.</em></h2><p>We’re an expedition and adventure filmmaking studio.<br>From remote journeys to everyday outdoor pursuits, we bring the experience—and the people behind it—to the screen.</p></div></div>
+    <div class="hs-contact-principles">
+      <div><h3>01 / Plan together</h3><p>A shared brief. A considered plan.</p></div>
+      <div><h3>02 / Adapt in the field</h3><p>Different environments. The same care.</p></div>
+      <div><h3>03 / Craft the story</h3><p>Care from first frame to final cut.</p></div>
+    </div>
+    <div class="hs-contact-footer"><span>HYPOXIC STUDIO / FIELD NOTES</span><a href="{{ '/about/' | relative_url }}">Meet the studio</a></div>
+  </section>
+  <!-- End new Why us design. -->
 </main>
-
-
-<script type="application/ld+json">
-{
-	"@context": "http://schema.org",
-	"@type": "WebSite",
-	"name": "{{ site.url }}{{ page.url }}",
-	"url": "{{ site.url }}{{ page.url }}"
-	}
-</script>
-	
-	
-
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  const year = document.getElementById("year");
-
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-});
-
-</script>

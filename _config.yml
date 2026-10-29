@@ -6,7 +6,7 @@ title: HYPOXIC.STUDIO
 description: Independent Film Studio — Nepal
 url: "https://hypoxic.studio"
 baseurl: ""
-name: Sunil Tamang
+name: HYPOXIC.STUDIO
 email: ""
 
 # Pretty URLs
@@ -101,7 +101,12 @@ strict_front_matter: true
 ####################################################
 # Excluded Files
 ####################################################
-
+sass:
+  sass_dir: _sass
+  style: compressed
+  silence_deprecations:
+    - import
+    
 exclude:
   - Gemfile
   - Gemfile.lock

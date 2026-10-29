@@ -1,160 +1,33 @@
 ---
 layout: default
-title: Our Story
-slick_css: 'Yes'
-slick_js: 'Yes'
+title: About Hypoxic Studio
 permalink: /about/
-subtitle1: "The Journey"
-subtitle2: "Begins"
-custom_bg: bg/about0.jpg
+description: An independent film studio based in Nepal. Adventure, exploration and human stories, from first idea to final frame.
 ---
-
-{% assign video_slides = site.data.slideshow.slides | where: "type", "video" %}
-{% assign second_video = video_slides[1] %}
-
-<!-- <section class="video-banner">
-
-    {% if second_video %}
-    <video class="video-background"
-           autoplay muted loop playsinline
-           controlsList="nodownload nofullscreen noremoteplayback"
-           oncontextmenu="return false;"
-           poster="{{ site.baseurl }}/assets/css/images/banner.jpg">
-        <source src="{{ site.baseurl }}{{ second_video.src }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="video-debug">🎬 Using second video: {{ second_video.src }}</div>
-
-    {% else %}
-
-    {% assign first_video = video_slides[0] %}
-
-    {% if first_video %}
-    Fallback video
-    <video class="video-background"
-           autoplay muted loop playsinline
-           controlsList="nodownload nofullscreen noremoteplayback"
-           oncontextmenu="return false;"
-           poster="{{ site.baseurl }}/assets/css/images/banner.jpg">
-        <source src="{{ site.baseurl }}{{ first_video.src }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="video-debug">🎬 Using fallback (first video): {{ first_video.src }}</div>
-
-    {% else %}
-    <div class="video-fallback"
-         style="background: url('{{ site.baseurl }}/assets/css/images/banner.jpg') center/cover no-repeat; width: 100%; height: 100vh;">
+<link rel="stylesheet" href="{{ '/assets/css/about-studio.css' | relative_url }}">
+<div class="studio-about">
+  <section class="studio-intro" aria-labelledby="studio-title">
+    <p class="studio-label">/ About the studio <span>(01)</span></p>
+    <div class="studio-intro-grid">
+      <h1 id="studio-title"><span>Driven by curiosity.</span><br>Drawn to the unknown.</h1>
+      <p>Hypoxic is an independent film studio based in Nepal. We tell stories of adventure, exploration, and the people who push beyond the familiar.</p>
     </div>
-    <div class="video-debug">⚠️ No videos found, using image fallback</div>
-    {% endif %}
-    {% endif %}
-
-    <div class="video-overlay"></div>
-
-    <div class="text-container">
-        <h1 class="main-headline">
-            <span class="line-2">EXPLORE THE UNKNOWN.</span>
-        </h1>
-        <div class="separator"></div>
-        <p class="sub-headline">
-            <span class="line-1">Bringing Adventure to Life,</span>
-            <span class="line-2">One Frame at a Time.</span>
-        </p>
+    <div class="studio-contact-sheet">
+      <figure><div><img src="{{ '/assets/css/images/stills/banner20.jpg' | relative_url }}" alt="An expedition group together in the field"></div><figcaption><strong>One shared vision.</strong><span>Collaboration / 01</span></figcaption></figure>
+      <figure><div><img src="{{ '/assets/css/images/services/rock/hero.jpeg' | relative_url }}" alt="A climber on a rock face above the forest"></div><figcaption><strong>Beyond the familiar.</strong><span>Adventure / 02</span></figcaption></figure>
+      <figure><div><img src="{{ '/assets/css/images/stills/banner18.jpg' | relative_url }}" alt="People gathered inside a shelter"></div><figcaption><strong>People at the centre.</strong><span>Connection / 03</span></figcaption></figure>
+      <figure><div><img src="{{ '/assets/css/images/services/rock/12.jpeg' | relative_url }}" alt="A climber’s chalk-covered hands"></div><figcaption><strong>Care in every detail.</strong><span>Craft / 04</span></figcaption></figure>
     </div>
-</section>
-
-
-<section class="about-block">
-    <div class="about-container">
-        <p class="about-label">ABOUT EXPEDITION STUDIOS</p>
-
-        <h1 class="about-headline">
-       We shoot and produce everything from films to videos, with a quality you can trust. <br/>
-       We work with businesses and creatives to create the best content possible, working around the clock to deliver  <br/>
-       results in an efficient manner.
-        </h1>
-    </div>
-</section> -->
-
-
-
-<section class="about-hero">
-
-    <div class="about-hero-container">
-
-        <img
-            src="{{ site.baseurl }}/assets/css/images/about-bg.jpg"
-            alt="Sunil Tamang"
-            class="about-bg">
-
-        <div class="about-overlay"></div>
-
-        <div class="about-content">
-
-            <h1>ABOUT</h1>
-
-            <div class="about-text">
-
-                <p>
-                    I'm <strong>Sunil Tamang</strong>, an expedition filmmaker, mountaineer, and aspiring <strong>NNMGA/IFMGA Mountain Guide</strong> based in Nepal. I create cinematic documentaries that capture the spirit of exploration, high-altitude expeditions, and life in some of the world's most remote mountain landscapes.
-                </p>
-
-                <p>
-                    My work is shaped by firsthand experience in the mountains. From technical climbing to remote expeditions, I believe the most compelling stories come from those who truly live the adventure. Every frame is driven by authenticity, respect for the environment, and a passion for visual storytelling.
-                </p>
-
-                <p>
-                    Whether documenting Himalayan expeditions, alpine ascents, or the people whose lives are connected to the mountains, my goal is to tell powerful stories that inspire exploration, resilience, and a deeper appreciation for the natural world.
-                </p>
-
-            </div>
-
-            <!-- Featured Gallery -->
-
-            <div class="featured-gallery">
-
-                <img src="{{ site.baseurl }}/assets/css/images/gallery1.jpg" alt="">
-                <img src="{{ site.baseurl }}/assets/css/images/gallery2.jpg" alt="">
-                <img src="{{ site.baseurl }}/assets/css/images/gallery3.jpg" alt="">
-                <img src="{{ site.baseurl }}/assets/css/images/gallery4.jpg" alt="">
-                <img src="{{ site.baseurl }}/assets/css/images/gallery5.jpg">
-                <img src="{{ site.baseurl }}/assets/css/images/gallery6.jpg">
-                <img src="{{ site.baseurl }}/assets/css/images/gallery7.jpg">
-                <img src="{{ site.baseurl }}/assets/css/images/gallery8.jpg">
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const video = document.querySelector(".video-background");
-    const banner = document.querySelector(".video-banner");
-
-    if (video) {
-        video.addEventListener("loadeddata", () => {
-            banner.style.opacity = "1";
-        });
-
-        video.addEventListener("error", () => {
-            banner.style.background =
-                "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)";
-        });
-
-        video.style.pointerEvents = "none";
-
-        video.addEventListener("contextmenu", (e) => e.preventDefault());
-    }
-
-    if (banner) {
-        banner.addEventListener("contextmenu", (e) => e.preventDefault());
-    }
-});
-</script>
+    <div class="studio-strip"><p>Behind every frame is <strong>a shared perspective.</strong></p><span>BASED IN NEPAL / OPEN TO THE WORLD</span></div>
+  </section>
+  <section class="studio-story" aria-labelledby="studio-story-title">
+    <p class="studio-label">/ Our perspective <span>(02)</span></p>
+    <div class="studio-story-grid"><h2 id="studio-story-title">Adventure has<br>many landscapes.</h2><div><p>Through honest storytelling and striking imagery, we bring extraordinary experiences and overlooked perspectives to life.</p><p>From mountain expeditions to rock, trail and the moments between, our focus stays the same: the people, places and experiences that make a story worth telling.</p><a class="studio-button" href="{{ '/films/' | relative_url }}">Explore our work</a></div></div>
+  </section>
+  <section class="studio-method" aria-labelledby="studio-method-title">
+    <p class="studio-label">/ How we work <span>(03)</span></p>
+    <h2 id="studio-method-title">A shared brief.<br>A considered approach.</h2>
+    <div class="studio-method-grid"><article><span>01 / BEFORE</span><h3>Listen. Plan. Prepare.</h3><p>We start with your story and shape the creative direction, the shoot and the crew around it.</p></article><article><span>02 / IN THE FIELD</span><h3>Stay present.</h3><p>We adapt to the environment and make space for the unexpected, without losing sight of the story.</p></article><article><span>03 / IN THE EDIT</span><h3>Make every frame matter.</h3><p>Picture, colour and sound come together to bring the experience to your audience.</p></article></div>
+    <div class="studio-close"><p>Have a story in mind?</p><a class="studio-button" href="{{ '/contact/' | relative_url }}">Let’s talk</a></div>
+  </section>
+</div>

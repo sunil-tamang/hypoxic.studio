@@ -1,0 +1,7 @@
+---
+---
+// Reset only shared chrome, preserving each page’s typography.
+.hs-site-chrome { @import "reset"; }
+@import "../../_sass/home.scss";
+
+@import "light-theme";
