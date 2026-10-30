@@ -8,8 +8,11 @@
     const source = surface.getBoundingClientRect();
     const target = footer.getBoundingClientRect();
     const style = getComputedStyle(surface);
-    // Both surfaces use a top-left tile origin. Continue that origin into the footer.
-    footer.style.backgroundPosition = `${source.left - target.left}px ${source.top - target.top}px`;
+    // Fixed textures share a viewport origin; scrolling textures share the source origin.
+    footer.style.backgroundAttachment = style.backgroundAttachment;
+    footer.style.backgroundPosition = style.backgroundAttachment === 'fixed'
+      ? style.backgroundPosition
+      : `${source.left - target.left}px ${source.top - target.top}px`;
     footer.style.backgroundSize = style.backgroundSize;
   }
   function schedule() {
