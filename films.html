@@ -7,12 +7,14 @@ permalink: /films/
 <section class="film-editorial-index project-showcase" data-view="grid">
  <div class="films-header"><h1>Our films.</h1><div class="project-view" aria-label="Project view"><button type="button" id="gridBtn" aria-pressed="true">Grid</button><span>/</span><button type="button" id="listBtn" aria-pressed="false">List</button></div></div>
  {% assign categories = 'All projects|Photo|Podcasts|Documentary|Expedition|Commercial|Short Film' | split: '|' %}
+ {% assign stills = site.static_files | sort: 'path' %}
+ {% assign photo_extensions = '.jpg|.jpeg|.png|.webp|.avif|.gif' | split: '|' %}
  <div class="project-layout">
  <nav class="project-sidebar" aria-label="Categories and project counts">
  {% for category in categories %}<button type="button" data-film-filter="{% unless forloop.first %}{{ category }}{% endunless %}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"><span>{% if forloop.first %}All{% else %}{{ category }}{% endif %}</span><span data-category-count>0</span></button>{% endfor %}
  </nav>
  <div class="project-results">
- <div class="project-rail" id="filmsGrid" aria-label="Film gallery" tabindex="0">
+ <div class="project-rail" id="filmsGrid" aria-label="Project gallery" tabindex="0">
  {% for pair in site.data.films %}{% assign film = pair[1] %}
  <a class="project-card" data-film-category="{{ film.category | escape }}" href="{{ '/films/' | append: pair[0] | append: '/' | relative_url }}">
  <div class="project-image"><img src="{{ film.thumbnail | relative_url }}" alt="{{ film.title | escape }}" loading="lazy">
@@ -20,12 +22,28 @@ permalink: /films/
  <div class="project-image-meta"><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span>{{ film.year }}</span></div></div>
  <div class="project-caption"><p>{{ film.category }}</p><h2>{{ film.title }}</h2></div></a>
  {% endfor %}
+ {% for photo in stills %}
+ {% assign folder = photo.path | remove: photo.name %}
+ {% assign extension = photo.extname | downcase %}
+ {% if folder == '/assets/css/images/stills/' and photo_extensions contains extension %}
+ {% assign photo_title = photo.basename | replace: '_', ' ' | replace: '-', ' ' %}
+ <a class="project-card" data-film-category="Photo" href="{{ photo.path | relative_url }}" aria-label="View photo: {{ photo_title | escape }}">
+ <div class="project-image"><img src="{{ photo.path | relative_url }}" alt="{{ photo_title | escape }}" loading="lazy" decoding="async"></div>
+ <div class="project-caption"><p>Photo</p><h2>{{ photo_title | escape }}</h2></div></a>
+ {% endif %}{% endfor %}
  </div>
  <div class="project-table" id="filmsList">
  <div class="project-table-head"><span>#</span><span>Project</span><span>Type</span><span>Year</span><span>Duration</span><span>Location</span></div>
  {% for pair in site.data.films %}{% assign film = pair[1] %}
  <a class="project-table-row" data-film-category="{{ film.category | escape }}" href="{{ '/films/' | append: pair[0] | append: '/' | relative_url }}"><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span class="project-table-title"><img src="{{ film.thumbnail | relative_url }}" alt="" loading="lazy"><span>{{ film.title }}</span></span><span>{{ film.category }}</span><span>{{ film.year }}</span><span>{{ film.duration }}</span><span>{{ film.location }}</span></a>
  {% endfor %}
+ {% for photo in stills %}
+ {% assign folder = photo.path | remove: photo.name %}
+ {% assign extension = photo.extname | downcase %}
+ {% if folder == '/assets/css/images/stills/' and photo_extensions contains extension %}
+ {% assign photo_title = photo.basename | replace: '_', ' ' | replace: '-', ' ' %}
+ <a class="project-table-row" data-film-category="Photo" href="{{ photo.path | relative_url }}"><span>—</span><span class="project-table-title"><img src="{{ photo.path | relative_url }}" alt="" loading="lazy"><span>{{ photo_title | escape }}</span></span><span>Photo</span><span>—</span><span>—</span><span>—</span></a>
+ {% endif %}{% endfor %}
  </div>
  <p class="film-filter-empty" hidden>No projects in this category yet.</p>
  <div class="project-controls"><span data-project-position>01 / {{ site.data.films | size }}</span><progress max="{{ site.data.films | size }}" value="1" aria-label="Gallery position"></progress><div><button type="button" data-project-prev aria-label="Previous projects">←</button><button type="button" data-project-next aria-label="Next projects">→</button></div></div>
