@@ -59,3 +59,31 @@
  });
  position();
 })();
+
+// Match the page texture, including when the horizontal gallery moves.
+(() => {
+ const page = document.querySelector('.project-showcase');
+ if (!page) return;
+ const source = page.closest('.hs-page-content') || document.body;
+ const images = [...page.querySelectorAll('.project-image')];
+ let pending = false;
+ function align() {
+  pending = false;
+  const origin = source.getBoundingClientRect();
+  const size = getComputedStyle(source).backgroundSize;
+  images.forEach(image => {
+   const rect = image.getBoundingClientRect();
+   image.style.setProperty('--project-contour-size', size);
+   image.style.setProperty('--project-contour-position', `${origin.left - rect.left}px ${origin.top - rect.top}px`);
+  });
+ }
+ function schedule() {if (!pending) {pending=true;requestAnimationFrame(align);}}
+ page.querySelector('.project-rail').addEventListener('scroll',schedule,{passive:true});
+ page.addEventListener('click',schedule);
+ window.addEventListener('resize',schedule);
+ window.addEventListener('load',schedule);
+ document.fonts.ready.then(schedule);
+ const observer = new ResizeObserver(schedule);
+ observer.observe(source);observer.observe(page);images.forEach(image => observer.observe(image));
+ schedule();
+})();

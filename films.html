@@ -6,10 +6,7 @@ permalink: /films/
 <link rel="stylesheet" href="{{ '/assets/css/film-editorial.css' | relative_url }}">
 <section class="film-editorial-index project-showcase" data-view="grid">
  <div class="films-header"><h1>Our films.</h1><div class="project-view" aria-label="Project view"><button type="button" id="gridBtn" aria-pressed="true">Grid</button><span>/</span><button type="button" id="listBtn" aria-pressed="false">List</button></div></div>
- <nav class="film-filters" aria-label="Project categories">
  {% assign categories = 'All projects|Photo|Podcasts|Documentary|Expedition|Commercial|Short Film' | split: '|' %}
- {% for category in categories %}<button type="button" data-film-filter="{% unless forloop.first %}{{ category }}{% endunless %}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">/ {{ category }}</button>{% endfor %}
- </nav>
  <div class="project-layout">
  <nav class="project-sidebar" aria-label="Categories and project counts">
  {% for category in categories %}<button type="button" data-film-filter="{% unless forloop.first %}{{ category }}{% endunless %}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"><span>{% if forloop.first %}All{% else %}{{ category }}{% endif %}</span><span data-category-count>0</span></button>{% endfor %}
