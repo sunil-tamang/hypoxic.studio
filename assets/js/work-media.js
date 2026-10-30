@@ -26,3 +26,33 @@
   document.addEventListener("hs-motion-change", event => { paused = event.detail.paused; sync(); });
   preference.addEventListener("change", event => { paused = event.matches; sync(); });
 })();
+
+// Share the page's contour origin rather than restarting the tile per image.
+(() => {
+  const surfaces = [...document.querySelectorAll('.hs-work-photo')];
+  if (!surfaces.length) return;
+  const source = document.body;
+  let frame;
+  function alignContours() {
+    frame = null;
+    const origin = source.getBoundingClientRect();
+    const style = getComputedStyle(source);
+    surfaces.forEach(surface => {
+      const rect = surface.getBoundingClientRect();
+      surface.style.setProperty('--work-contour-position', `${origin.left - rect.left}px ${origin.top - rect.top}px`);
+      surface.style.setProperty('--work-contour-size', style.backgroundSize);
+    });
+  }
+  function schedule() {
+    if (!frame) frame = requestAnimationFrame(alignContours);
+  }
+  window.addEventListener('resize', schedule);
+  window.addEventListener('load', schedule);
+  document.fonts.ready.then(schedule);
+  const observer = new ResizeObserver(schedule);
+  observer.observe(source);
+  const shell = document.querySelector('.hs-shell');
+  if (shell) observer.observe(shell);
+  surfaces.forEach(surface => observer.observe(surface));
+  schedule();
+})();

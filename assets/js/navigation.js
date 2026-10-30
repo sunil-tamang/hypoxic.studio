@@ -93,3 +93,28 @@
   });
 
 })();
+
+// Align the fixed navigation texture with the scrolling content surface.
+(() => {
+ const nav = document.querySelector('.hs-nav');
+ if (!nav) return;
+ const surface = document.querySelector('.hs-page-content') || document.body;
+ let pending = false;
+ function align() {
+  pending = false;
+  const source = surface.getBoundingClientRect();
+  const target = nav.getBoundingClientRect();
+  nav.style.setProperty('--nav-contour-position', `${source.left - target.left}px ${source.top - target.top}px`);
+  nav.style.setProperty('--nav-contour-size', getComputedStyle(surface).backgroundSize);
+ }
+ function schedule() {
+  if (!pending) { pending = true; requestAnimationFrame(align); }
+ }
+ window.addEventListener('scroll', schedule, {passive:true});
+ window.addEventListener('resize', schedule);
+ window.addEventListener('load', schedule);
+ document.fonts.ready.then(schedule);
+ const observer = new ResizeObserver(schedule);
+ observer.observe(nav); observer.observe(surface);
+ schedule();
+})();

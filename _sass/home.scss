@@ -483,3 +483,38 @@ body.hs-home .hs-footer::before { background-position: right bottom; }
 .hs-home .hs-field-benefits li>p {font:400 17px/1.3 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-.015em;margin:12px 0 0;}
 @media(max-width:1000px){.hs-home .hs-field-intro{grid-template-columns:1fr;gap:28px}.hs-home .hs-field-intro>p{max-width:620px}.hs-home .hs-field-columns{gap:24px}.hs-home .hs-field-benefits ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.hs-home .hs-field-notes{padding:65px 0 40px}.hs-home .hs-field-intro{margin:36px 0 44px}.hs-home .hs-field-intro h2 br{display:none}.hs-home .hs-field-columns{grid-template-columns:1fr;gap:40px}.hs-home .hs-field-marker{margin-bottom:28px}.hs-home .hs-field-benefits ol{grid-template-columns:1fr;gap:24px}}
+
+
+
+/* Work media uses the same contour asset and scale as the page background. */
+.hs-home .hs-work-photo {position:relative;isolation:isolate;}
+.hs-home .hs-work-photo::after {
+ content:"";
+ position:absolute;
+ inset:0;
+ z-index:1;
+ background-image:url('images/studio-contours.svg');
+ background-size:var(--work-contour-size,1440px 1080px);
+ background-position:var(--work-contour-position,0 0);
+ background-repeat:repeat;
+ opacity:.16;
+ pointer-events:none;
+ border-radius:inherit;
+}
+@media(max-width:700px){.hs-home .hs-work-photo::after{background-size:var(--work-contour-size,1000px 750px);}}
+
+/* Shared navigation contours remain behind controls and follow the page tile. */
+.hs-home .hs-nav::before {
+ content:"";
+ position:absolute;
+ inset:0;
+ border-radius:inherit;
+ background-image:url('images/studio-contours.svg');
+ background-size:var(--nav-contour-size,1440px 1080px);
+ background-position:var(--nav-contour-position,0 0);
+ background-repeat:repeat;
+ opacity:.35;
+ pointer-events:none;
+ z-index:0;
+}
+.hs-home .hs-nav-bar,.hs-home .hs-nav>.hs-menu {position:relative;z-index:1;}
