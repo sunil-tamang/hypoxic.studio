@@ -1,98 +1,30 @@
 ---
-title: Contact Us
+title: Contact Hypoxic Studio
 layout: default
-permalink: "/contact/"
-custom_bg: bg/contact.jpg
-author_name: 
-tags: ContactPage,
-contains_ads : "YES"
+permalink: /contact/
+description: Talk to Hypoxic Studio about films, expeditions, studio rentals and creative collaborations.
 ---
-
-
-
-<div class="container-wide row--padding-medium" >
-
-<section class="contact-page">
-
-    <div class="contact-hero">
-
-        <span class="contact-label">
-            AVAILABLE WORLDWIDE
-        </span>
-
-        <h1>
-            GOT A<br>PROJECT?
-        </h1>
-
-        <p>
-            Documentary films, expedition cinematography,
-            commercial outdoor productions and mountain storytelling.
-        </p>
-
-    </div>
-
-
-    <form class="contact-form"
-          action="https://formsubmit.co/YOUR_EMAIL"
-          method="POST">
-
-        <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            required>
-
-        <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required>
-
-        <input
-            type="text"
-            name="subject"
-            placeholder="Subject">
-
-        <textarea
-            name="message"
-            placeholder="Tell me about your project..."
-            rows="7"></textarea>
-
-        <button type="submit">
-
-            SEND MESSAGE
-
-        </button>
-
-    </form>
-
-
-    <div class="contact-divider"></div>
-
-    <div class="contact-email">
-
-        <span>OR EMAIL ME DIRECTLY</span>
-
-        <a href="mailto:hello@hypoxicstudio.com">
-
-            hello@hypoxic.com
-
-        </a>
-
-    </div>
-
-
-    <div class="contact-social">
-
-        <a href="#">Instagram</a>
-
-        <a href="#">YouTube</a>
-
-        <a href="#">Vimeo</a>
-
-    </div>
-
+<link rel="stylesheet" href="{{ '/assets/css/contact-studio.css' | relative_url }}">
+<div class="hypoxic-contact">
+ <section aria-labelledby="contact-title">
+ <div class="hc-label"><span>/ Contact</span><span>[01]</span></div>
+ <div class="hc-intro"><div><h1 id="contact-title">Got a project?</h1><p>We’re always open to new stories, collaborations and ideas.<br>Whether you’re planning an expedition, making a film,<br>or exploring a concept, tell us what you have in mind.</p></div><p class="hc-location-note">Based in Nepal.<br>Working worldwide.<br>From high mountains<br>to remote communities.</p></div>
+ <div class="hc-contact-grid"><form id="hc-form">
+<label class="hc-input"><span class="hc-sr">Name</span><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3Z"/></svg><input name="name" type="text" autocomplete="name" placeholder="Name" required></label>
+<label class="hc-input"><span class="hc-sr">Email</span><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 5 9 8 9-8"/></svg><input name="email" type="email" autocomplete="email" placeholder="Email" required></label>
+<label class="hc-input"><span class="hc-sr">Subject</span><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3 6h18M6 12h12M10 18h4"/></svg><select name="subject" required><option value="" disabled selected>Subject</option><option>Film production</option><option>Expedition filmmaking</option><option>Photography</option><option>Studio rental</option><option>Collaboration</option><option>Other inquiry</option></select></label>
+<label class="hc-input hc-message"><span class="hc-sr">Tell us about your project</span><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m4 16 12-12 4 4L8 20H4Zm10-10 4 4"/></svg><textarea name="message" rows="6" maxlength="4000" placeholder="Tell us about your project…" required></textarea></label>
+<button class="hc-send" type="submit">Send message</button><p class="hc-form-note">Opens your email app with a draft to review and send.</p><p id="hc-status" role="status"></p><noscript><p>Email us directly at hello@hypoxic.com.</p></noscript>
+</form><aside class="hc-details"><div><p class="hc-label">01 / Email</p><a class="hc-detail-title" href="mailto:hello@hypoxic.com">hello@hypoxic.com</a><p>For general inquiries, project proposals and collaborations.</p></div><div><p class="hc-label">02 / Location</p><h2 class="hc-detail-title">Kathmandu, Nepal</h2><p>Our home base. We travel for work across Nepal and worldwide.</p></div><div><p class="hc-label">03 / Follow</p><nav class="hc-social" aria-label="Social media"><a href="#" data-placeholder title="Profile link coming soon">Instagram</a><a href="#" data-placeholder title="Profile link coming soon">YouTube</a><a href="#" data-placeholder title="Profile link coming soon">Vimeo</a></nav></div></aside></div>
 </section>
-
-
-</div>
+<section class="hc-faq" aria-labelledby="hc-faq-title"><div class="hc-faq-intro"><p class="hc-label">/ FAQ</p><h2 id="hc-faq-title">Questions?<br>We’ve got you.</h2><p>Here are some common questions about working with Hypoxic Studio. If you don’t find what you’re looking for, feel free to reach out.</p></div>
+<details class="hc-faq-card" open><summary><span class="hc-faq-number">01</span><h3>What types of projects do you take on?</h3><span class="hc-faq-toggle" aria-hidden="true"></span></summary><div class="hc-faq-answer"><p>We work on documentary films, brand stories, expeditions, and creative projects with purpose.</p></div></details>
+<details class="hc-faq-card" open><summary><span class="hc-faq-number">02</span><h3>Where are you based and do you work internationally?</h3><span class="hc-faq-toggle" aria-hidden="true"></span></summary><div class="hc-faq-answer"><p>We’re based in Kathmandu, Nepal, and work with clients and partners worldwide.</p><div class="hc-faq-art hc-art-contours" aria-hidden="true"></div></div></details>
+<details class="hc-faq-card" open><summary><span class="hc-faq-number">03</span><h3>What is the typical process for a project?</h3><span class="hc-faq-toggle" aria-hidden="true"></span></summary><div class="hc-faq-answer"><p>We start with a conversation, define the scope, plan logistics, and move into production.</p></div></details>
+<details class="hc-faq-card" open><summary><span class="hc-faq-number">04</span><h3>Do you work with brands and agencies?</h3><span class="hc-faq-toggle" aria-hidden="true"></span></summary><div class="hc-faq-answer"><p>Yes. We collaborate with brands, agencies and organisations on creative and documentary work.</p><div class="hc-faq-art hc-art-rings" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="9" cy="12" r="7"/><circle cx="16" cy="12" r="7"/></svg></div></div></details>
+<details class="hc-faq-card" open><summary><span class="hc-faq-number">05</span><h3>Can you help with permits and logistics in Nepal?</h3><span class="hc-faq-toggle" aria-hidden="true"></span></summary><div class="hc-faq-answer"><p>Tell us where you plan to film. We can discuss permit requirements, local logistics, and the support your project needs.</p><div class="hc-faq-art hc-art-mountain" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m1 21 9-17 12 17Zm7-9 2 3 3-5M13 7l5-4 12 18H16"/></svg></div></div></details>
+<details class="hc-faq-card" open><summary><span class="hc-faq-number">06</span><h3>How far in advance should we get in touch?</h3><span class="hc-faq-toggle" aria-hidden="true"></span></summary><div class="hc-faq-answer"><p>Ideally 2–3 months in advance, especially for expeditions or remote locations. Get in touch to discuss your timeline.</p><div class="hc-faq-art hc-art-calendar" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="5" width="20" height="20" rx="2"/><path d="M3 11h20M8 2v6M18 2v6"/></svg></div></div></details>
+<details class="hc-faq-card" open><summary><span class="hc-faq-number">07</span><h3>Do you take on smaller projects or content pieces?</h3><span class="hc-faq-toggle" aria-hidden="true"></span></summary><div class="hc-faq-answer"><p>Yes. We also take on smaller projects, including short films, photo stories and content pieces.</p><div class="hc-faq-art hc-art-stack" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3 10h15v15H3ZM8 6h14v15M12 2h14v15"/></svg></div></div></details>
+<details class="hc-faq-card" open><summary><span class="hc-faq-number">08</span><h3>How can we collaborate or partner with you?</h3><span class="hc-faq-toggle" aria-hidden="true"></span></summary><div class="hc-faq-answer"><p>Share a bit about your idea, goals, and timeline, and we’ll take it from there.</p><div class="hc-faq-art hc-art-rings" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="9" cy="12" r="7"/><circle cx="16" cy="12" r="7"/></svg></div></div></details>
+</section></div>
+<script src="{{ '/assets/js/contact-studio.js' | relative_url }}" defer></script>
