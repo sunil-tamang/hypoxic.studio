@@ -93,9 +93,9 @@ Awards section retained for future publication.
    </div>
    <div class="studio-team-origin">Nepal<br>and beyond</div>
   </aside>
-  {% assign member_names = 'Pasang Arya Sherpa|Sensai Pema Waiba|Sunil Tamang' | split: '|' %}
-  {% assign member_photos = 'pasang.jpg|sensai.jpg|sunil.jpg' | split: '|' %}
-  {% assign member_links = '/team/pasang-arya-sherpa/|/team/sensai-pema-waiba/|/team/sunil/' | split: '|' %}
+  {% assign member_names = 'Sensai Pema Waiba|Sunil Tamang' | split: '|' %}
+  {% assign member_photos = 'sensai.jpg|sunil.jpg' | split: '|' %}
+  {% assign member_links = '/team/sensai-pema-waiba/|/team/sunil/' | split: '|' %}
   {% for member_name in member_names %}
   {% assign member = site.team | where: 'name', member_name | first %}
   <article class="studio-team-member">
@@ -108,15 +108,10 @@ Awards section retained for future publication.
     <p class="studio-team-role">Co-founder / Cinematographer{% if member_name == 'Sunil Tamang' %} / Mountain Guide{% endif %}</p>
     <div class="studio-team-bio">
      {% case member_name %}
-     {% when 'Pasang Arya Sherpa' %}
-     <p>Pasang is a cinematographer with years of experience filming mountaineering expeditions in the Himalayas, including climbs above 8,000 metres.</p>
-     <p>Working in those conditions has taught him patience, adaptability, and the importance of knowing when to capture a moment. He co-founded Hypoxic to bring that experience into new filmmaking projects.</p>
      {% when 'Sensai Pema Waiba' %}
-     <p>Sensai is a high-altitude cinematographer who has spent years filming expeditions on Nepal's 8,000-metre peaks.</p>
-     <p>He's used to working in extreme conditions, where even the simplest shot can be a challenge. He co-founded Hypoxic with Sunil and Pasang to build something of their own and take on new creative projects.</p>
+     <p>Sensai is a co-founder and cinematographer with years of experience filming on Nepal’s 8,000-metre peaks. He brings that adaptability and creative perspective to every Hypoxic project.</p>
      {% when 'Sunil Tamang' %}
-     <p>Sunil is a cinematographer and mountain guide from Nepal. He's spent years filming expeditions on some of the world's highest mountains, including above 8,000 metres in the death zone.</p>
-     <p>His experience as both a guide and cameraman shapes how he approaches filmmaking. He co-founded Hypoxic to take that experience beyond the mountains and explore new stories.</p>
+     <p>Sunil is a co-founder, cinematographer and mountain guide from Nepal. His experience filming above 8,000 metres shapes an approach grounded in adventure, people and stories beyond the mountains.</p>
      {% endcase %}
     </div>
     <a href="{{ member_links[forloop.index0] | relative_url }}">View profile →</a>

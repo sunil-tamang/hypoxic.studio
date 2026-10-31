@@ -1,4 +1,7 @@
 xander:
+  gallery_folder: "/assets/css/images/films/xander/"
+  next_project: "everest"
+  story_heading: "A journey into the Himalayas."
   title: "32 Days In The Himalayas"
   year: 2025
   category: "Documentary"
@@ -30,6 +33,8 @@ xander:
 
 
 ebc-night:
+  gallery_folder: "/assets/css/images/films/rodrigo/"
+  next_project: "xander"
   title: "Expedição ao Everest - V8.Tech"
   year: 2025
   category: "Documentary"
@@ -62,6 +67,8 @@ ebc-night:
     - himalayas
     
 everest:
+  gallery_folder: "/assets/css/images/films/everest/"
+  next_project: "decio-gomes"
   title: "Life In Death Zone"
   year: 2026
   category: "Documentary"
@@ -92,6 +99,8 @@ everest:
 
 
 decio-gomes:
+  gallery_folder: "/assets/css/images/films/dacio/"
+  next_project: "ebc-night"
   title: "A jornada continua e o cume nos espera!"
   year: 2025
   category: "Documentary"

@@ -4,86 +4,19 @@ layout: default
 
 {% assign film = site.data.films[page.slug] %}
 
-{% if page.slug == 'xander' %}<link rel="stylesheet" href="{{ '/assets/css/film-editorial.css' | relative_url }}">{% endif %}
-<section class="film-project{% if page.slug == 'xander' %} film-editorial-detail{% endif %}">
-{% if page.slug == 'xander' %}
-<div class="editorial-project-hero">
- <img src="{{ film.poster | relative_url }}" alt="{{ film.title | escape }}">
- <div class="editorial-film-top"><a href="{{ '/films/' | relative_url }}">All films</a><span>{{ film.category }} / {{ film.year }}</span></div>
- <div class="editorial-film-copy"><span class="editorial-kicker">HYPOXIC STUDIO / {{ film.client }}</span><h1>{{ film.title }}</h1>
- <p>{{ film.description }}</p>
- <div class="editorial-tags"><span>{{ film.category }}</span><span>{{ film.location }}</span><span>{{ film.duration }}</span></div>
- <button class="editorial-watch" id="openVideo" type="button" data-video="{{ film.youtube | escape }}">Watch the film</button>
+<link rel="stylesheet" href="{{ '/assets/css/film-editorial.css' | relative_url }}">
+<section class="film-project film-editorial-detail">
+{% assign frame_folder = film.gallery_folder %}
+{% assign film_frames = site.static_files | where_exp: 'image', 'image.path contains frame_folder' | sort: 'path' %}
+{% assign hero_image = film_frames.first.path | default: film.poster %}
+<div class="xander-hero">
+ <img id="xanderHeroImage" src="{{ hero_image | relative_url }}" alt="{{ film.title | escape }} — selected frame">
+ <div class="xander-slide-controls"><span id="xanderSlideCount">01 / {{ film_frames.size }}</span><button type="button" data-slide="-1" aria-label="Previous frame">←</button><button type="button" data-slide="1" aria-label="Next frame">→</button></div>
+ <div class="xander-hero-copy"><span class="xander-label">Featured film</span><h1>{{ film.title }}</h1>
+ <p class="xander-label">{{ film.category }} &nbsp; / &nbsp; {{ film.year }} &nbsp; / &nbsp; {{ film.location }} &nbsp; / &nbsp; {{ film.duration }}</p>
+ <button class="xander-watch" id="openVideo" type="button" data-video="{{ film.youtube | escape }}"><span aria-hidden="true">▶</span> Watch the film</button>
  </div>
 </div>
-{% else %}
-
-    <!-- =========================
-         HEADER
-    ========================== -->
-
-    <div class="film-header">
-
-        <h1 class="film-title">
-            {{ film.title }}
-        </h1>
-
-        <div class="film-meta">
-
-            <div class="meta-item">
-                <span>Category</span>
-                <strong>{{ film.category }}</strong>
-            </div>
-
-            <div class="meta-item">
-                <span>Client</span>
-                <strong>{{ film.client }}</strong>
-            </div>
-
-            <div class="meta-item">
-                <span>Year</span>
-                <strong>{{ film.year }}</strong>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         VIDEO HERO
-    ========================== -->
-
-<!-- =====================================
-     VIDEO HERO
-====================================== -->
-
-<div
-    class="film-video-banner"
-    id="openVideo"
-    data-video="{{ film.youtube }}">
-
-    <img
-        src="{{ film.poster | relative_url }}"
-        alt="{{ film.title }}">
-
-    <div class="film-video-overlay"></div>
-
-    <div class="play-button">
-
-        <svg viewBox="0 0 24 24">
-
-            <path d="M8 5v14l11-7z"/>
-
-        </svg>
-
-    </div>
-
-</div>
-
-
-{% endif %}
-
 <!-- =====================================
      VIDEO POPUP
 ====================================== -->
@@ -116,104 +49,32 @@ layout: default
          ABOUT + CREDITS
     ========================== -->
 
-    <section class="film-details">
-
-        <div class="film-description">
-
-            <h2>About This Project</h2>
-
-            <p>
-
-                {{ film.description }}
-
-            </p>
-
-        </div>
-
-        <div class="film-credits">
-
-            <h2>Project Credits</h2>
-
-            <div class="credit">
-
-                <span>Director</span>
-
-                <strong>{{ film.director }}</strong>
-
-            </div>
-
-            <div class="credit">
-
-                <span>Cinematography</span>
-
-                <strong>{{ film.cinematography }}</strong>
-
-            </div>
-
-            <div class="credit">
-
-                <span>Editor</span>
-
-                <strong>{{ film.editor }}</strong>
-
-            </div>
-
-            <div class="credit">
-
-                <span>Producer</span>
-
-                <strong>{{ film.producer }}</strong>
-
-            </div>
-
-            <div class="credit">
-
-                <span>Location</span>
-
-                <strong>{{ film.location }}</strong>
-
-            </div>
-
-            <div class="credit">
-
-                <span>Duration</span>
-
-                <strong>{{ film.duration }}</strong>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         GALLERY
-    ========================== -->
-
-{% if film.gallery %}
-
-<section class="film-gallery">
-
-    <div class="gallery-grid">
-
-        {% for image in film.gallery %}
-
-        <img
-            src="{{ image | relative_url }}"
-            alt="{{ film.title }}">
-
-        {% endfor %}
-
-    </div>
-
+<section class="xander-story">
+ <div><p class="xander-label">02 / The story</p><h2>{{ film.story_heading | default: film.title }}</h2><p>{{ film.description }}</p></div>
+ <div class="xander-credits"><p class="xander-label">03 / Film credits</p>
+ {% assign credit_keys = 'director|cinematography|editor|producer|location|duration' | split: '|' %}
+ <dl>{% for key in credit_keys %}<div><dt>{{ key | capitalize }}</dt><dd>{{ film[key] }}</dd></div>{% endfor %}</dl>
+ </div>
 </section>
-
-{% endif %}
-
-
+<section class="xander-frames"><div class="xander-section-heading"><h2 class="xander-label">04 / Selected frames</h2></div>
+ <div class="xander-frame-grid">{% for image in film_frames limit:3 %}<a href="{{ image.path | relative_url }}"><img src="{{ image.path | relative_url }}" alt="{{ film.title | escape }} — frame {{ forloop.index }}" loading="lazy"></a>{% endfor %}</div>
+ {% if film_frames.size > 3 %}<details class="xander-more"><summary>View more photos</summary><div class="xander-frame-grid">{% for image in film_frames offset:3 %}<a href="{{ image.path | relative_url }}"><img src="{{ image.path | relative_url }}" alt="{{ film.title | escape }} — frame {{ forloop.index | plus:3 }}" loading="lazy"></a>{% endfor %}</div></details>{% endif %}
 </section>
-
+{% assign next_film = site.data.films[film.next_project] %}
+{% assign next_url = '/films/' | append: film.next_project | append: '/' %}
+<section class="xander-next"><p class="xander-label">05 / Next project</p><a href="{{ next_url | relative_url }}"><img src="{{ next_film.poster | relative_url }}" alt="{{ next_film.title | escape }}" loading="lazy"><div><h2>{{ next_film.title }}</h2><p class="xander-label">{{ next_film.category }} / {{ next_film.year }} / {{ next_film.duration }}</p></div><span>View project</span></a></section>
+<section class="xander-contact"><div><p class="xander-label">Let’s work together</p><h2>LET’S TELL<br>A BIGGER STORY.</h2></div><div><p>Good stories start with a conversation. Let’s talk about your next project.</p><a class="xander-button" href="{{ '/contact/' | relative_url }}">Get in touch</a></div></section>
 <script>
-
+(() => {
+ const frames = [{% for image in film_frames %}{{ image.path | relative_url | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}];
+ const image = document.getElementById('xanderHeroImage');
+ let current = 0;
+ document.querySelectorAll('[data-slide]').forEach(button => button.addEventListener('click', () => {
+  if (!frames.length) return;
+  current = (current + Number(button.dataset.slide) + frames.length) % frames.length;
+  image.src = frames[current];
+  document.getElementById('xanderSlideCount').textContent = String(current + 1).padStart(2, '0') + ' / ' + String(frames.length).padStart(2, '0');
+ }));
+})();
 </script>
+</section>

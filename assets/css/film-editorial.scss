@@ -97,3 +97,85 @@
  background-repeat:repeat;opacity:.16;border-radius:inherit;
 }
 .project-showcase .project-image-meta {z-index:2;}
+
+/* Xander desktop composition; retain the existing mobile treatment. */
+@media (min-width:851px) {
+ .film-editorial-detail {max-width:1440px;padding-top:40px;}
+ .film-editorial-detail .editorial-project-hero {
+  display:flex;align-items:center;min-height:560px;aspect-ratio:auto;
+  padding:100px 0 64px;box-sizing:border-box;
+ }
+ .film-editorial-detail .editorial-project-hero>img {object-position:center;}
+ .film-editorial-detail .editorial-film-top {top:30px;left:36px;right:36px;}
+ .film-editorial-detail .editorial-film-copy {
+  width:49%;box-sizing:border-box;margin-left:auto;
+  padding:0 clamp(28px,3.5vw,56px) 0 20px;
+ }
+ .film-editorial-detail .editorial-film-copy h1 {
+  font-size:clamp(36px,3.6vw,58px);line-height:1.08;
+  letter-spacing:-.035em;max-width:11ch;margin:20px 0 24px;
+ }
+ .film-editorial-detail .editorial-film-copy p {max-width:42ch;font-size:16px;line-height:1.65;}
+ .film-editorial-detail .film-details {
+  width:100%;max-width:none;margin:64px 0 80px;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(40px,6vw,100px);
+ }
+ .film-editorial-detail .film-details h2 {font-size:26px;line-height:1.2;margin-bottom:24px;}
+ .film-editorial-detail .film-description p {font-size:17px;line-height:1.7;max-width:52ch;}
+ .film-editorial-detail .film-credits {padding-left:28px;}
+ .film-editorial-detail .credit {padding:14px 0;}
+ .film-editorial-detail .film-gallery {width:100%;max-width:none;}
+}
+@media (min-width:1200px) {
+ .film-editorial-detail .editorial-project-hero {min-height:640px;}
+}
+
+/* Xander film feature. */
+.hs-page-content .film-editorial-detail {background:transparent;}
+.xander-hero {position:relative;isolation:isolate;overflow:hidden;border-radius:18px;min-height:520px;aspect-ratio:2.15;background:#14232b;display:flex;align-items:center;}
+.xander-hero>img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+.xander-hero::after {content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,17,24,.8),rgba(5,17,24,.3) 60%,transparent);z-index:-1;}
+.xander-hero-copy {padding:60px 5%;max-width:75%;}
+.film-editorial-detail .xander-hero :is(h1,p,span,button) {color:#fff;}
+.film-editorial-detail .xander-hero h1 {font:400 clamp(40px,5vw,76px)/1.03 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-.035em;margin:24px 0 28px;}
+.film-editorial-detail .xander-label {font-size:10px;line-height:1.6;letter-spacing:.15em;text-transform:uppercase;font-weight:400;}
+.xander-watch {display:flex;align-items:center;gap:18px;background:none;border:0;font:inherit;font-size:14px;margin-top:44px;padding:0;cursor:pointer;}
+.xander-watch>span {display:grid;place-items:center;width:48px;height:48px;border:1px solid white;border-radius:50%;font-size:12px;}
+.xander-slide-controls {position:absolute;right:4%;top:30px;display:flex;gap:16px;align-items:center;font-size:12px;}
+.xander-slide-controls button {background:#14232b88;border:0;border-radius:50%;width:32px;height:32px;cursor:pointer;}
+.xander-story {display:grid;grid-template-columns:1fr 1fr;gap:8%;padding:56px 5%;}
+.film-editorial-detail .xander-story h2 {font-size:clamp(28px,3vw,44px);font-weight:400;line-height:1.15;letter-spacing:-.03em;margin:24px 0;}
+.xander-story p:not(.xander-label),.xander-contact p:not(.xander-label) {font-size:16px;line-height:1.7;color:#666;}
+.xander-credits {border-left:1px solid #ccc;padding-left:10%;}
+.xander-credits dl {margin:30px 0;}
+.xander-credits dl>div {display:grid;grid-template-columns:1fr 1.3fr;gap:16px;padding:14px 0;border-bottom:1px solid #ddd;}
+.xander-credits dt {font-size:10px;text-transform:uppercase;letter-spacing:.1em;}
+.xander-credits dd {margin:0;font-size:13px;}
+.film-editorial-detail .xander-button {display:inline-block;background:#111b20;color:white;border:0;border-radius:30px;padding:13px 22px;font:inherit;font-size:13px;text-decoration:none;cursor:pointer;}
+.xander-frames,.xander-next,.xander-contact {border-top:1px solid #d8d8d8;padding:38px 0;margin-top:18px;}
+.xander-section-heading {margin-bottom:22px;}
+.xander-frame-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+.xander-frame-grid img {width:100%;aspect-ratio:1.55;object-fit:cover;border-radius:14px;display:block;transition:opacity .25s;}
+.xander-frame-grid a:hover img {opacity:.85;}
+.xander-more summary {cursor:pointer;width:fit-content;margin:24px 0;font-size:13px;}
+.xander-next {padding:32px 8%;}
+.xander-next>a {display:grid;grid-template-columns:30% 1fr auto;gap:28px;align-items:center;color:inherit;text-decoration:none;margin-top:24px;}
+.xander-next img {width:100%;aspect-ratio:2;object-fit:cover;border-radius:14px;}
+.film-editorial-detail .xander-next h2 {font-size:24px;font-weight:400;margin-bottom:12px;}
+.xander-next>a>span {font-size:13px;}
+.xander-contact {display:grid;grid-template-columns:1.3fr 1fr;gap:8%;padding:48px 3%;}
+.film-editorial-detail .xander-contact h2 {font-size:clamp(30px,4vw,58px);line-height:1.05;font-weight:400;letter-spacing:-.035em;margin-top:16px;}
+.xander-contact .xander-button {margin-top:20px;}
+@media(max-width:700px){
+ .xander-hero{aspect-ratio:auto;min-height:540px;align-items:flex-end;}
+ .xander-hero-copy{max-width:100%;padding:100px 24px 36px;}
+ .xander-hero::after{background:linear-gradient(0deg,rgba(5,17,24,.9),rgba(5,17,24,.1));}
+ .xander-story,.xander-contact{grid-template-columns:1fr;gap:32px;padding:32px 0;}
+ .xander-credits{border-left:0;padding-left:0;}
+ .xander-frame-grid{grid-template-columns:1fr;}
+ .xander-next{padding:30px 0;}
+ .xander-next>a{grid-template-columns:1fr;gap:18px;}
+}
+
+/* Keep longer project titles within the shared hero composition. */
+.film-editorial-detail .xander-hero h1 {max-width:13ch;overflow-wrap:break-word;}
