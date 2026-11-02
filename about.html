@@ -93,9 +93,9 @@ Awards section retained for future publication.
    </div>
    <div class="studio-team-origin">Nepal<br>and beyond</div>
   </aside>
-  {% assign member_names = 'Sensai Pema Waiba|Sunil Tamang' | split: '|' %}
-  {% assign member_photos = 'sensai.jpg|sunil.jpg' | split: '|' %}
-  {% assign member_links = '/team/sensai-pema-waiba/|/team/sunil/' | split: '|' %}
+  {% assign member_names = 'Pasang Arya Sherpa|Sensai Pema Waiba|Sunil Tamang' | split: '|' %}
+  {% assign member_photos = 'pasang.jpg|sensai.jpg|sunil.jpg' | split: '|' %}
+  {% assign member_links = '/team/pasang-arya-sherpa/|/team/sensai-pema-waiba/|/team/sunil/' | split: '|' %}
   {% for member_name in member_names %}
   {% assign member = site.team | where: 'name', member_name | first %}
   <article class="studio-team-member">
@@ -108,6 +108,8 @@ Awards section retained for future publication.
     <p class="studio-team-role">Co-founder / Cinematographer{% if member_name == 'Sunil Tamang' %} / Mountain Guide{% endif %}</p>
     <div class="studio-team-bio">
      {% case member_name %}
+     {% when 'Pasang Arya Sherpa' %}
+     <p>Pasang is a co-founder and cinematographer with years of experience filming Himalayan expeditions above 8,000 metres. He brings patience, adaptability and an instinct for capturing the moment to new filmmaking projects.</p>
      {% when 'Sensai Pema Waiba' %}
      <p>Sensai is a co-founder and cinematographer with years of experience filming on Nepal’s 8,000-metre peaks. He brings that adaptability and creative perspective to every Hypoxic project.</p>
      {% when 'Sunil Tamang' %}
