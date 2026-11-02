@@ -4,30 +4,31 @@ title: Films
 permalink: /films/
 ---
 <link rel="stylesheet" href="{{ '/assets/css/film-editorial.css' | relative_url }}">
-<section class="film-editorial-index project-showcase" data-view="grid">
+<section class="film-editorial-index project-showcase project-editorial" data-view="grid">
  <div class="films-header"><h1>Our films.</h1><div class="project-view" aria-label="Project view"><button type="button" id="gridBtn" aria-pressed="true">Grid</button><span>/</span><button type="button" id="listBtn" aria-pressed="false">List</button></div></div>
- {% assign categories = 'All projects|Photo|Podcasts|Documentary|Expedition|Commercial|Short Film' | split: '|' %}
+ <p class="project-intro">Expeditions, people, and places<br>at the edge — a film collection<br>from Hypoxic Studio.</p>
+ {% assign categories = 'All projects|Documentary|Photo|Podcasts|Expedition|Commercial|Short Film' | split: '|' %}
  {% assign stills = site.static_files | sort: 'path' %}
  {% assign photo_extensions = '.jpg|.jpeg|.png|.webp|.avif|.gif' | split: '|' %}
  <div class="project-layout">
  <nav class="project-sidebar" aria-label="Categories and project counts">
- {% for category in categories %}<button type="button" data-film-filter="{% unless forloop.first %}{{ category }}{% endunless %}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"><span>{% if forloop.first %}All{% else %}{{ category }}{% endif %}</span><span data-category-count>0</span></button>{% endfor %}
+ {% for category in categories %}<button type="button" data-film-filter="{% unless forloop.first %}{{ category }}{% endunless %}" aria-pressed="{% if category == 'Documentary' %}true{% else %}false{% endif %}"><span>{% if forloop.first %}All{% else %}{{ category }}{% endif %}</span><span data-category-count>0</span></button>{% endfor %}
  </nav>
  <div class="project-results">
  <div class="project-rail" id="filmsGrid" aria-label="Project gallery" tabindex="0">
  {% for pair in site.data.films %}{% assign film = pair[1] %}
- <a class="project-card" data-film-category="{{ film.category | escape }}" href="{{ '/films/' | append: pair[0] | append: '/' | relative_url }}">
+ <a class="project-card" data-project="{{ pair[0] }}" data-film-category="{{ film.category | escape }}" href="{{ '/films/' | append: pair[0] | append: '/' | relative_url }}">
  <div class="project-image"><img src="{{ film.thumbnail | relative_url }}" alt="{{ film.title | escape }}" loading="lazy">
  {% if film.hover_video %}<video muted loop playsinline preload="none" aria-hidden="true" poster="{{ film.thumbnail | relative_url }}"><source src="{{ film.hover_video | relative_url }}" type="video/mp4"></video>{% endif %}
  <div class="project-image-meta"><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span>{{ film.year }}</span></div></div>
- <div class="project-caption"><p>{{ film.category }}</p><h2>{{ film.title }}</h2></div></a>
+ <div class="project-caption"><div class="project-caption-heading"><h2>{{ film.title }}</h2><p>{{ film.category }} &nbsp; · &nbsp; {{ film.year }}</p></div><p class="project-excerpt">{{ film.summary | default: film.description }}</p></div></a>
  {% endfor %}
  {% for photo in stills %}
  {% assign folder = photo.path | remove: photo.name %}
  {% assign extension = photo.extname | downcase %}
  {% if folder == '/assets/css/images/stills/' and photo_extensions contains extension %}
  {% assign photo_title = photo.basename | replace: '_', ' ' | replace: '-', ' ' %}
- <a class="project-card" data-film-category="Photo" href="{{ photo.path | relative_url }}" aria-label="View photo: {{ photo_title | escape }}">
+ <a class="project-card" data-film-category="Photo" hidden href="{{ photo.path | relative_url }}" aria-label="View photo: {{ photo_title | escape }}">
  <div class="project-image"><img src="{{ photo.path | relative_url }}" alt="{{ photo_title | escape }}" loading="lazy" decoding="async"></div>
  <div class="project-caption"><p>Photo</p><h2>{{ photo_title | escape }}</h2></div></a>
  {% endif %}{% endfor %}
@@ -42,7 +43,7 @@ permalink: /films/
  {% assign extension = photo.extname | downcase %}
  {% if folder == '/assets/css/images/stills/' and photo_extensions contains extension %}
  {% assign photo_title = photo.basename | replace: '_', ' ' | replace: '-', ' ' %}
- <a class="project-table-row" data-film-category="Photo" href="{{ photo.path | relative_url }}"><span>—</span><span class="project-table-title"><img src="{{ photo.path | relative_url }}" alt="" loading="lazy"><span>{{ photo_title | escape }}</span></span><span>Photo</span><span>—</span><span>—</span><span>—</span></a>
+ <a class="project-table-row" data-film-category="Photo" hidden href="{{ photo.path | relative_url }}"><span>—</span><span class="project-table-title"><img src="{{ photo.path | relative_url }}" alt="" loading="lazy"><span>{{ photo_title | escape }}</span></span><span>Photo</span><span>—</span><span>—</span><span>—</span></a>
  {% endif %}{% endfor %}
  </div>
  <p class="film-filter-empty" hidden>No projects in this category yet.</p>

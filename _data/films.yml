@@ -1,4 +1,5 @@
 xander:
+  summary: "Xander Budnick and his brother travel to Everest Base Camp and attempt to summit Ama Dablam."
   gallery_folder: "/assets/css/images/films/xander/"
   next_project: "everest"
   story_heading: "A journey into the Himalayas."
@@ -33,6 +34,7 @@ xander:
 
 
 ebc-night:
+  summary: "Rodrigo Xavier and his Brazilian team take on Everest, testing their preparation, endurance and resilience."
   gallery_folder: "/assets/css/images/films/rodrigo/"
   next_project: "xander"
   title: "Expedição ao Everest - V8.Tech"
@@ -67,6 +69,7 @@ ebc-night:
     - himalayas
     
 everest:
+  summary: "A high-altitude journey with Xander Budnick and his brother, from Everest Base Camp toward Ama Dablam."
   gallery_folder: "/assets/css/images/films/everest/"
   next_project: "decio-gomes"
   title: "Life In Death Zone"
@@ -99,6 +102,7 @@ everest:
 
 
 decio-gomes:
+  summary: "Décio Gomes takes on Everest, bringing strategy, resilience and mental fortitude to an extraordinary climb."
   gallery_folder: "/assets/css/images/films/dacio/"
   next_project: "ebc-night"
   title: "A jornada continua e o cume nos espera!"

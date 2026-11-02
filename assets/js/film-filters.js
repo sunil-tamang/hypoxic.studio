@@ -25,6 +25,7 @@
   const count = button.querySelector('[data-category-count]');
   if (count) count.textContent = String(cards.filter(card => !category || card.dataset.filmCategory === category).length).padStart(2,'0');
   button.addEventListener('click', () => {
+   page.classList.toggle('is-filtered', !!category && category !== 'Documentary');
    filters.forEach(other => other.setAttribute('aria-pressed', String(other.dataset.filmFilter === category)));
    page.querySelectorAll('[data-film-category]').forEach(item => { item.hidden = !!category && item.dataset.filmCategory !== category; });
    cards.forEach(card => { const video = card.querySelector('video'); if (video) {video.pause();video.classList.remove('is-playing');} });
@@ -57,7 +58,9 @@
   const stop = () => {active=false;video.pause();video.classList.remove('is-playing');};
   card.addEventListener('mouseenter',play);card.addEventListener('mouseleave',stop);card.addEventListener('focus',play);card.addEventListener('blur',stop);
  });
- position();
+ const defaultFilter = filters.find(button => button.dataset.filmFilter === 'Documentary');
+ if (defaultFilter) defaultFilter.click();
+ else position();
 })();
 
 // Match the page texture, including when the horizontal gallery moves.
